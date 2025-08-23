@@ -1,0 +1,292 @@
+/* --------------------
+   Base Styling
+-------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;              /* use min-height so it can grow */
+    display: flex;
+    flex-direction: column;         /* stack vertically */
+    align-items: center;
+    justify-content: flex-start;    /* start from top instead of centering */
+    gap: 2rem;                      /* spacing between boxes */
+    background: linear-gradient(180deg, #EAF3EF 0%, #A8DAD8 100%);
+    font-family: "Inter", sans-serif;
+    color: #006373;
+    overflow-x: hidden;             /* prevent sideways scroll */
+    position: relative;
+    padding: 2rem 0;                /* top/bottom breathing space */
+  }
+
+  /* -----
+  google fonts
+  ----   */
+
+  .fira-sans-thin {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .fira-sans-extralight {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .fira-sans-light {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .fira-sans-regular {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .fira-sans-medium {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .fira-sans-semibold {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .fira-sans-bold {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .fira-sans-extrabold {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .fira-sans-black {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .fira-sans-thin-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .fira-sans-extralight-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .fira-sans-light-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .fira-sans-regular-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .fira-sans-medium-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .fira-sans-semibold-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .fira-sans-bold-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .fira-sans-extrabold-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .fira-sans-black-italic {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+
+  /* --------------------
+     Content Box
+  -------------------- */
+  .content {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 3rem 4rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    text-align: center;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 1.8s ease forwards;
+  }
+  
+  .content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #B35A20, #E8891D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "fira-sans-bold";
+  }
+  
+  .content p {
+    font-size: 1.25rem;
+    color: #00454F;
+  }
+  
+  /* --------------------
+     Wave Layers
+  -------------------- */
+  .wave {
+    position: fixed;   /* instead of absolute */
+    left: 0;
+    width: 200%;
+    height: 180px;
+    background-repeat: repeat-x;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.6;
+    background-size: contain;
+    pointer-events: none; /* so clicks pass through */
+  }
+  
+  
+  /* --------------------
+     Wave Layers
+  -------------------- */
+  .wave1 {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='180'><path d='M0 80 Q 60 120, 120 80 T 240 80 T 360 80 T 480 80 T 600 80 T 720 80 T 840 80 T 960 80 T 1200 80' stroke='%23B35A20' stroke-width='4' fill='transparent'/></svg>");
+    animation: waveMove 12s linear infinite;
+    opacity: 0.7;
+  }
+  
+  .wave2 {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='180'><path d='M0 100 Q 60 140, 120 100 T 240 100 T 360 100 T 480 100 T 600 100 T 720 100 T 840 100 T 960 100 T 1200 100' stroke='%23E8891D' stroke-width='4' fill='transparent'/></svg>");
+    bottom: 25px;
+    opacity: 0.5;
+    animation: waveMove 18s linear infinite reverse;
+  }
+  
+  .wave3 {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='180'><path d='M0 120 Q 60 160, 120 120 T 240 120 T 360 120 T 480 120 T 600 120 T 720 120 T 840 120 T 960 120 T 1200 120' stroke='%2305A3A4' stroke-width='4' fill='transparent'/></svg>");
+    bottom: 45px;
+    opacity: 0.45;
+    animation: waveMove 25s linear infinite;
+  }
+  
+  /* --------------------
+     Animations
+  -------------------- */
+  @keyframes waveMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+/* ----------------
+ Navbar + Music visulizer
+ ------------------- */
+ .navbar {
+    position: fixed;
+    top: 50%;
+    left: 70px;  /* a little more to the right */
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  .navbar li {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #00454F;
+    transition: color 0.3s;
+    font-family: "fira-sans-bold";
+  }  
+  
+  .navbar li:hover {
+    color: #E8891D;
+  }
+  
+  /* Music Visualizer Box */
+  .music-visualizer {
+    position: fixed;
+    left: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 20;
+  }
+  
+/* Visualizer under navbar */
+ #visualizer {
+    width: 180px;
+    height: 70px;  /* smaller */
+    margin-top: -30px;  /* move up closer to nav items */
+    display: block;
+  }
+  #toggleMusic {
+    border: none;
+    background: #E8891D;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #toggleMusic:hover {
+    background: #B35A20;
+  }
+  
