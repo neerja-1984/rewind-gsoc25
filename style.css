@@ -19,7 +19,7 @@ body {
   font-family: 'Fira Sans', sans-serif;
   color: #006373;
   overflow-x: hidden;
-  cursor: url('images/cursor.png'), default;
+  cursor: url('images/cursor-default.png'), default;
 }
 
 h1, h2, h3 {
@@ -149,7 +149,7 @@ Navbar + Music visulizer
 .navbar li {
   margin: 1rem 0;
   font-size: 1.3rem;
-  cursor: pointer;
+  cursor: url('images/cursor-tap.png'), pointer;
   color: #00454F;
   transition: color 0.3s;
   font-weight: 600;
@@ -193,7 +193,7 @@ Navbar + Music visulizer
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  cursor: pointer;
+  cursor: url('images/cursor-tap.png'), pointer;
   transition: background 0.3s;
 }
 
@@ -227,6 +227,7 @@ Footer styling
   text-decoration: none;
   color: #0077b6; /* deep ocean blue */
   font-weight: 500;
+  cursor: url('images/cursor-tap.png'), pointer;
 }
 
 .footer-icons {
@@ -257,6 +258,7 @@ Footer styling
   text-decoration: none;
   color: #0077b6; /* deep ocean blue */
   font-weight: 500;
+  cursor: url('images/cursor-tap.png'), pointer;
 }
 
 .footer .credits a:hover {
@@ -360,7 +362,7 @@ Timeline container
   border-radius: 50%;
   padding: 8px;
   font-size: 18px;
-  cursor: pointer;
+  cursor: url('images/cursor-tap.png'), pointer;
   transition: transform 0.3s;
   font-style: normal;
 }
@@ -370,7 +372,7 @@ Timeline container
 
 /* Content wrapper */
 .timeline-content {
-  cursor: pointer;
+  cursor: url('images/cursor-tap.png'), pointer;
   border: 2px solid #05A3A4;
   border-radius: 10px;
   padding: 15px;
