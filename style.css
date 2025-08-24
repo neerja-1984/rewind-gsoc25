@@ -18,8 +18,8 @@ body {
   background: linear-gradient(180deg, #EAF3EF 0%, #A8DAD8 100%);
   font-family: 'Fira Sans', sans-serif;
   color: #006373;
-  cursor:default;
   overflow-x: hidden;
+  cursor: url('images/cursor.png'), default;
 }
 
 h1, h2, h3 {
