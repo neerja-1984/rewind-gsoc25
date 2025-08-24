@@ -119,3 +119,10 @@
     setupAudioOnce();
     tryStartPlayback();
   });
+
+  // timeline----------------------------------------------
+  function toggleContent(dotElement) {
+    const item = dotElement.closest('.timeline-item');
+    item.classList.toggle('open');
+  }
+  
