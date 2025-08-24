@@ -271,11 +271,12 @@
   
 /* Visualizer under navbar */
  #visualizer {
-    width: 180px;
+    width: 120px;
     height: 70px;  /* smaller */
     margin-top: -30px;  /* move up closer to nav items */
     display: block;
   }
+  
   #toggleMusic {
     border: none;
     background: #E8891D;
