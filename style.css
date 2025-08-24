@@ -15,125 +15,17 @@
     justify-content: flex-start;    /* start from top instead of centering */
     gap: 2rem;                      /* spacing between boxes */
     background: linear-gradient(180deg, #EAF3EF 0%, #A8DAD8 100%);
-    font-family: "Inter", sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     color: #006373;
     overflow-x: hidden;             /* prevent sideways scroll */
     position: relative;
     padding: 2rem 0;                /* top/bottom breathing space */
   }
 
-  /* -----
-  google fonts
-  ----   */
-
-  .fira-sans-thin {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .fira-sans-extralight {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-  }
-  
-  .fira-sans-light {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .fira-sans-regular {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .fira-sans-medium {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .fira-sans-semibold {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .fira-sans-bold {
-    font-family: "Fira Sans", sans-serif;
+  h1, h2, h3 {
+    font-family: 'Fira Sans', sans-serif;
     font-weight: 700;
-    font-style: normal;
   }
-  
-  .fira-sans-extrabold {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-  
-  .fira-sans-black {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-  }
-  
-  .fira-sans-thin-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 100;
-    font-style: italic;
-  }
-  
-  .fira-sans-extralight-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 200;
-    font-style: italic;
-  }
-  
-  .fira-sans-light-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .fira-sans-regular-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .fira-sans-medium-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  .fira-sans-semibold-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-  }
-  
-  .fira-sans-bold-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
-  .fira-sans-extrabold-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 800;
-    font-style: italic;
-  }
-  
-  .fira-sans-black-italic {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 900;
-    font-style: italic;
-  }
-  
 
   /* --------------------
      Content Box
@@ -164,9 +56,17 @@
     color: #00454F;
   }
   
-  /* --------------------
-     Wave Layers
-  -------------------- */
+
+  /* ----------------
+    Wave Layers
+  ------------------- */
+  .waves-section {
+    position: relative;
+    height: 50px;
+    margin-top: -20px; /* optional tighter spacing */
+    z-index: 1;
+  }
+
   .wave {
     position: fixed;   /* instead of absolute */
     left: 0;
@@ -229,6 +129,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    font-weight: 600;
   }
   
   .navbar ul {
@@ -243,7 +144,8 @@
     cursor: pointer;
     color: #00454F;
     transition: color 0.3s;
-    font-family: "fira-sans-bold";
+    font-weight: 600;
+    font-style: italic;
   }  
   
   .navbar li:hover {
@@ -291,3 +193,65 @@
     background: #B35A20;
   }
   
+  /* -------------
+  Footer styling 
+  ---------*/
+
+  .footer {
+    text-align: center;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 15px;
+    color: #444;
+  }
+  
+  .footer .crafted a{
+    font-style: italic;
+    color: #666;
+    text-decoration: none;
+    color: #0077b6; /* deep ocean blue */
+    font-weight: 500;
+  }
+  
+  .footer-icons {
+    margin: 10px 0;
+  }
+  
+  .footer-icons .icon {
+    width: 28px;
+    height: 28px;
+    margin: 0 12px;
+    filter: grayscale(40%);
+    opacity: 0.8;
+    transition: all 0.25s ease;
+  }
+  
+  .footer-icons .icon:hover {
+    transform: scale(1.15);
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  
+  .footer .credits {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .footer .credits a {
+    text-decoration: none;
+    color: #0077b6; /* deep ocean blue */
+    font-weight: 500;
+  }
+  
+  .footer .credits a:hover {
+    text-decoration: underline;
+    color: #0096c7;
+  }
+  
+  .footer .music-note {
+    color: #9c27b0; /* muted purple, softer than the neon look */
+    margin-right: 6px;
+  }
+  
+  .credits{
+    margin-top: 5px;
+  }
