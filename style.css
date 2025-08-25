@@ -400,17 +400,7 @@ Timeline container
   font-size: 13px;
   color: #555;
 }
-.content-badge {
-  font-size: 12px;
-  margin-top: 5px;
-  color: #fff;
-  background: #05A3A4;
-  padding: 3px 8px;
-  border-radius: 6px;
-  display: inline-block;
-  justify-items: center;
-  align-items: center;
-}
+
 
 /* Hidden by default */
 .expanded-content {
@@ -436,4 +426,91 @@ Timeline container
   padding: 3px 8px;
   margin: 3px;
   border-radius: 5px;
+}
+
+/* ---------
+confetti
+---------- */
+
+.content-badge {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #fff;
+  background: #b35820;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(7, 5, 70, 0.4);
+  animation: pulse 2s infinite;
+  min-width: 180px;
+  text-align: center;
+  cursor: url('images/cursor-tap.png'), pointer;
+}
+
+.content-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px ;
+  background: #E8891D ;
+}
+
+.content-badge:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0%, 100% {
+      box-shadow: 0 2px 8px , #E8891D;
+  }
+  50% {
+      box-shadow: 0 2px 20px , #e8911d;
+  }
+}
+
+
+/* Confetti styles */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.confetti-square {
+  background: #FFD700;
+}
+
+.confetti-circle {
+  background: #ed0000;
+  border-radius: 50%;
+}
+
+.confetti-triangle {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 8px solid #2e026b;
+}
+
+.confetti-star {
+  background: #03a218;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+@keyframes confetti-fall {
+  0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+  }
 }

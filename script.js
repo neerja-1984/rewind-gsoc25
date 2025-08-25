@@ -126,3 +126,71 @@
     item.classList.toggle('open');
   }
   
+
+  // confetti 
+  function createConfetti() {
+    const colors = ['confetti-square', 'confetti-circle', 'confetti-triangle', 'confetti-star'];
+    const confettiCount = 50;
+    
+    for (let i = 0; i < confettiCount; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = `confetti ${colors[Math.floor(Math.random() * colors.length)]}`;
+            
+            // Random starting position across the top of the screen
+            confetti.style.left = Math.random() * window.innerWidth + 'px';
+            confetti.style.top = '-10px';
+            
+            // Random animation duration and delay
+            const duration = Math.random() * 3 + 2; // 2-5 seconds
+            const delay = Math.random() * 0.5; // 0-0.5 second delay
+            
+            confetti.style.animation = `confetti-fall ${duration}s linear ${delay}s forwards`;
+            
+            document.body.appendChild(confetti);
+            
+            // Remove confetti after animation
+            setTimeout(() => {
+                if (confetti.parentNode) {
+                    confetti.parentNode.removeChild(confetti);
+                }
+            }, (duration + delay) * 1000);
+        }, i * 10); // Stagger creation slightly
+    }
+    
+    // Add a celebration pulse to the badge
+    const badge = document.querySelector('.content-badge');
+    badge.style.animation = 'none';
+    setTimeout(() => {
+        badge.style.animation = 'pulse 2s infinite';
+    }, 100);
+}
+
+// Optional: Add some ambient sparkles that appear randomly
+setInterval(() => {
+    if (Math.random() > 0.7) { // 30% chance every interval
+        createAmbientSparkle();
+    }
+}, 2000);
+
+function createAmbientSparkle() {
+    const sparkle = document.createElement('div');
+    sparkle.style.position = 'fixed';
+    sparkle.style.width = '3px';
+    sparkle.style.height = '3px';
+    sparkle.style.background = '#FFD700';
+    sparkle.style.borderRadius = '50%';
+    sparkle.style.pointerEvents = 'none';
+    sparkle.style.zIndex = '999';
+    sparkle.style.left = Math.random() * window.innerWidth + 'px';
+    sparkle.style.top = Math.random() * window.innerHeight + 'px';
+    sparkle.style.animation = 'sparkle 1s ease-out forwards';
+    
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => {
+        if (sparkle.parentNode) {
+            sparkle.parentNode.removeChild(sparkle);
+        }
+    }, 1000);
+}
