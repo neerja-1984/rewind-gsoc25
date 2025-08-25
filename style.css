@@ -19,7 +19,7 @@ body {
   font-family: 'Fira Sans', sans-serif;
   color: #006373;
   overflow-x: hidden;
-  cursor: url('images/cursor-default.png'), default;
+  cursor: url('assets/images/cursor-default.png'), default;
 }
 
 h1, h2, h3 {
@@ -149,7 +149,7 @@ Navbar + Music visulizer
 .navbar li {
   margin: 1rem 0;
   font-size: 1.3rem;
-  cursor: url('images/cursor-tap.png'), pointer;
+  cursor: url('assets/images/cursor-tap.png'), pointer;
   color: #00454F;
   transition: color 0.3s;
   font-weight: 600;
@@ -193,7 +193,7 @@ Navbar + Music visulizer
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  cursor: url('images/cursor-tap.png'), pointer;
+  cursor: url('assets/images/cursor-tap.png'), pointer;
   transition: background 0.3s;
 }
 
@@ -227,7 +227,7 @@ Footer styling
   text-decoration: none;
   color: #0077b6; /* deep ocean blue */
   font-weight: 500;
-  cursor: url('images/cursor-tap.png'), pointer;
+  cursor: url('assets/images/cursor-tap.png'), pointer;
 }
 
 .footer-icons {
@@ -258,7 +258,7 @@ Footer styling
   text-decoration: none;
   color: #0077b6; /* deep ocean blue */
   font-weight: 500;
-  cursor: url('images/cursor-tap.png'), pointer;
+  cursor: url('assets/images/cursor-tap.png'), pointer;
 }
 
 .footer .credits a:hover {
@@ -362,7 +362,7 @@ Timeline container
   border-radius: 50%;
   padding: 8px;
   font-size: 18px;
-  cursor: url('images/cursor-tap.png'), pointer;
+  cursor: url('assets/images/cursor-tap.png'), pointer;
   transition: transform 0.3s;
   font-style: normal;
 }
@@ -372,7 +372,7 @@ Timeline container
 
 /* Content wrapper */
 .timeline-content {
-  cursor: url('images/cursor-tap.png'), pointer;
+  cursor: url('assets/images/cursor-tap.png'), pointer;
   border: 2px solid #05A3A4;
   border-radius: 10px;
   padding: 15px;
@@ -443,14 +443,13 @@ confetti
   display: inline-block;
   justify-items: center;
   align-items: center;
-  cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(7, 5, 70, 0.4);
   animation: pulse 2s infinite;
   min-width: 180px;
   text-align: center;
-  cursor: url('images/cursor-tap.png'), pointer;
+  cursor: url('assets/images/cursor-tap.png'), pointer;
 }
 
 .content-badge:hover {
@@ -513,4 +512,80 @@ confetti
       transform: translateY(100vh) rotate(720deg);
       opacity: 0;
   }
+}
+
+/* ---------
+Blog tiles
+---------- */
+
+.section-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: space-between; /* distribute tiles neatly */
+  padding: 1rem;
+}
+
+
+.blog-tile {
+  cursor: url('assets/images/cursor-tap.png'), pointer;
+  position: relative; /* so the circle can be positioned inside */
+  background: #ffffff;
+  border: 2px solid #05A3A4;   /* Niagara turquoise accent */
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex: 1 1 45%; /* makes 2 tiles sit side by side */
+}
+
+.blog-image {
+  cursor: url('assets/images/cursor-tap.png'), pointer;
+  position: absolute;
+  right: 1rem;              /* stick to right side */
+  top: 50%;                 /* move to middle */
+  transform: translateY(-50%); /* perfect vertical centering */
+  width: 100px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(5,163,164,0.25);
+}
+
+.blog-link {
+  cursor: url('assets/images/cursor-tap.png'), pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.blog-title {
+  cursor: url('assets/images/cursor-tap.png'), pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #05A3A4;
+  margin-bottom: 0.6rem;
+}
+
+.blog-meta {
+  cursor: url('assets/images/cursor-tap.png'), pointer;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+
+.author {
+  cursor: url('assets/images/cursor-tap.png'), pointer;
+  font-weight: 500;
+  color: #333;
 }
