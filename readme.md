@@ -2709,3 +2709,9 @@ refernce :
 
 ### uploaded this awesomeeee readme to Github with images and videos
 - PS. Videos dont load -> coz of high memory ( viewer will have to download it to view from Github ) 💔
+
+## want to make a lovely PDF of this lovely readme i prepared in the last few months!! ❤️😭
+
+- `vscode extension -> Markdown PDF (https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)`
+- `right click readme -> export to pdf`
+- `creates a readme.pdf next to readme.md in folder structure` 😄
