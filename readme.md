@@ -1363,11 +1363,14 @@ Reciter textToPhonemes: 'Emirates'. "'EHMAYRAETEHS'"
 
 - ![alt text](Readme/readme-images-vc/image-131.png)
 - the wait used to block pharo -- cant do anything else, not even type 
-- Live demo : <video controls src="Readme/readme-images-vc/20250719-1230-43.9867889.mp4" title="Title"></video>
+- [▶ Watch demo](Readme/readme-images-vc/20250719-1230-43.9867889.mp4)
+- Live demo :<video controls src="Readme/readme-images-vc/20250719-1230-43.9867889.mp4" title="Title"></video>
 
 - hence we use, fork : 
 - ![alt text](Readme/readme-images-vc/image-132.png)
-- Live demo : <video controls src="Readme/readme-images-vc/20250719-1228-55.4828975.mp4" title="Title"></video>
+- [▶ Watch demo](Readme/readme-images-vc/20250719-1228-55.4828975.mp4)
+- Live demo : 
+<video controls src="Readme/readme-images-vc/20250719-1228-55.4828975.mp4" title="Title"></video>
 
 ### refactorings in `instrument class`
 -  so now we dont need to hardcode label as in this commit ... 
@@ -2283,7 +2286,9 @@ pamDsp sayNumbers: #(8 3 5 7).
 
 ```
 - `AUDIO TIMEEEEE !!!`
+  - [▶ Watch demo](Readme/readme-images-vc/20250811-1832-45.6292329.mp4)
   - <video controls src="Readme/readme-images-vc/20250811-1832-45.6292329.mp4" title="Title">0to9</video>
+  - [▶ Watch demo](Readme/readme-images-vc/20250811-1834-21.5947342.mp4)
   - <video controls src="Readme/readme-images-vc/20250811-1834-21.5947342.mp4" title="Title">#(8 3 5 7)</video>
   - Transcripts :
     - ![alt text](Readme/readme-images-vc/image-223.png)
@@ -2337,6 +2342,8 @@ pamDsp := PAMDsp new.
 pamDsp sayPhoneme: 'dog' . 
 ```
 - `VIDEOOOO TIMEEE`
+
+  - [▶ Watch demo](Readme/readme-images-vc/20250811-1859-11.3013338.mp4)
   - <video controls src="Readme/readme-images-vc/20250811-1859-11.3013338.mp4" title="Title">DOG</video>
   - transcript : 
     - ![alt text](Readme/readme-images-vc/image-225.png)
@@ -2407,6 +2414,8 @@ dsp trig: 'PAMSamplerGate' for: 2.
 | 900 | High Pitch | sounds alien 😆 |
 
 #### audio smaples : `playing with frequency .. aka pitch`
+
+- [▶ Watch demo](Readme/readme-images-vc/20250812-1917-42.4462476.mp4)
 - <video controls src="Readme/readme-images-vc/20250812-1917-42.4462476.mp4" title="Title"></video>
 
 2. `PAMSamplerULevel` : RANGE : [ 0 to 1 ]
@@ -2417,6 +2426,8 @@ dsp trig: 'PAMSamplerGate' for: 2.
 | 1 | Loud | max it can give |
 
 #### audio smaples : `playing with amplitude .. aka volume`
+
+- [▶ Watch demo](Readme/readme-images-vc/20250812-1919-57.5616726.mp4)
 - <video controls src="Readme/readme-images-vc/20250812-1919-57.5616726.mp4" title="Title"></video>
 
 3. `streching a note`
@@ -2425,6 +2436,8 @@ dsp trig: 'PAMSamplerGate' for: 2.
   - if value is 0.1 .. no streching ... best gliding seen between notes !
 
 #### audio smaples : `playing with note streching`
+
+- [▶ Watch demo](Readme/readme-images-vc/20250812-1922-02.9389929.mp4)
 - <video controls src="Readme/readme-images-vc/20250812-1922-02.9389929.mp4" title="Title"></video>
 
 |Value | Inference |
@@ -2550,6 +2563,8 @@ dsp := PAMDsp new.
 
 dsp sayTextWithProsody: 'dog'.
 ```
+
+- [▶ Watch demo](Readme/readme-images-vc/20250818-1756-05.7129125.mp4)
 - <video controls src="Readme/readme-images-vc/20250818-1756-05.7129125.mp4" title="Title"></video>
 - commit : 
 - Trascript : 😇
@@ -2571,6 +2586,7 @@ dsp := PAMDsp new.
 "toggle true / false below"
 dsp sayTextWithProsody: 'dog' asChild: false.
 ```
+- [▶ Watch demo](Readme/readme-images-vc/20250818-1905-52.5344590.mp4)
 - <video controls src="Readme/readme-images-vc/20250818-1905-52.5344590.mp4" title="Title"></video>
 - how we did it ?
   - pass as a flag in function :
@@ -2661,6 +2677,8 @@ Metacello new
 
 
 #### It worked in a new imageeee + all tests are greenn !!!! 💚💚💚💚💚💚💚
+
+- [▶ Watch demo](Readme/readme-images-vc/20250823-1519-08.0158074.mp4)
 - <video controls src="Readme/readme-images-vc/20250823-1519-08.0158074.mp4" title="Title"></video>
 - ![alt text](Readme/readme-images-vc/image-249.png)
 
