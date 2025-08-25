@@ -2682,9 +2682,11 @@ Metacello new
 - <video controls src="Readme/readme-images-vc/20250823-1519-08.0158074.mp4" title="Title"></video>
 - ![alt text](Readme/readme-images-vc/image-249.png)
 
+## 24th August'25
+
 ### Blog timeeeee !!
 
-- ideas as of now in my mind
+- ideas as of now in my mind`
 1. in PAM code project
   - add some code snippets + basic info + add zips of audio folder to it 
   - make a wiki for it for metacello installation
@@ -2697,3 +2699,13 @@ Metacello new
 refernce :
 - https://github.com/valens200/GSoC-2024
 - https://tyler-li-mcgill.tech/blog/gsoc3
+
+## 26th August'25
+
+### Gthub Hosted page !!! 😊
+
+- [Click Here to watch it live !!](https://neerja-1984.github.io/rewind-gsoc25/)
+- [Github Repo](https://github.com/neerja-1984/rewind-gsoc25)
+
+### uploaded this awesomeeee readme to Github with images and videos
+- PS. Videos dont load -> coz of high memory ( viewer will have to download it to view from Github ) 💔
