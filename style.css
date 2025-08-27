@@ -382,8 +382,8 @@ Navbar + Music visulizer
 /* Music Visualizer Box */
 .music-visualizer {
   position: fixed;
-  left: 120px;
-  top: 50%;
+  left: 10px;
+  top: 70%;
   transform: translateY(-50%);
   width: 200px;
   height: 300px;
