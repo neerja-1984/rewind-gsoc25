@@ -407,7 +407,6 @@ Navbar + Music visulizer
   height: 70px;  /* smaller */
   margin-top: -30px;  /* move up closer to nav items */
   display: block;
-  background-color: black;
 }
 
 #toggleMusic {
