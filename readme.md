@@ -2731,8 +2731,10 @@ refernce :
 
 ### to add in Blog : 
 - numbers : 
+  - [▶ Watch demo](Readme/readme-images-vc/20250827-1741-13.4817838.mp4)
   - <video controls src="Readme/readme-images-vc/20250827-1741-13.4817838.mp4" title="Title"></video>
   - transcript : ![alt text](Readme/readme-images-vc/image-251.png)
 - text :
+  - [▶ Watch demo](Readme/readme-images-vc/20250827-1746-13.8824086.mp4)
   - <video controls src="Readme/readme-images-vc/20250827-1746-13.8824086.mp4" title="Title"></video>
   - transcript : ![alt text](Readme/readme-images-vc/image-252.png)
