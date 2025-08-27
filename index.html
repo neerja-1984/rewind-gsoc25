@@ -2,591 +2,814 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GSoC'25 : PAM TTS Model</title>
-  <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- style sheet -->
-  <link rel="stylesheet" href="style.css">
-  <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.png' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSoC'25 : PAM TTS Model</title>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- style sheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.png' />
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Project</li>
-      <li>Contact</li>
-    </ul>
-    <canvas id="visualizer" width="100" height="90"></canvas>
-    <audio id="bgMusic" src="assets/music/lofi.mp3" loop></audio>
-  </nav>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#deliverables">👉 My Deliverables</a></li>
+            <li><a href="#project-abstract">👉 Project Abstract</a></li>
+            <li><a href="#major-accomplishments">👉 Major Accomplishments</a></li>
+            <li><a href="#technical-challenges">👉 Technical Challenges Overcome</a></li>
+            <li><a href="#timeline">👉 Timeline Chart of PAM Development</a></li>
+            <li><a href="#code-quality-testing">👉 Code Quality & Testing</a></li>
+            <li><a href="#future-development">👉 Future Development Opportunities</a></li>
+            <li><a href="#acknowledgements">👉 Acknowledgements</a></li>
+            <li><a href="#useful-links">👉 Useful Links !</a></li>
+            <li><a href="#blogs">👉 Blogs</a></li>
+          </ul>
+        <canvas id="visualizer" width="100" height="90"></canvas>
+        <audio id="bgMusic" src="assets/music/lofi.mp3" loop></audio>
+    </nav>
 
-  <!-- Main Content -->
-  <section class="main-section">
-    <h1>How Easy EMDR Started</h1>
-    <p>
-      In 2019, as a student employee in Macalester’s Entrepreneurship & Innovation Office, Ayça Arbay ’23 (Izmir,
-      Turkey) took on an assignment to edit a video for a new startup called Easy EMDR, founded by Zachary Jordan ’20.
-      Three years later, they collaborated again—this time through the college’s MacNest program, which connects
-      students with local startups for paid 10-week internships. Jordan, now Easy EMDR’s successful CEO, was named to
-      Minne Inno’s “Inno Under 25” list in 2020. Through Easy EMDR, he launched an app for mobile and web use that makes
-      Eye Movement Desensitization and Reprocessing (EMDR) treatment accessible and affordable by integrating the
-      technology into virtual therapy. He pledges 10 percent of Easy EMDR’s profits to nonprofit organizations, part of
-      his broader mission to make trauma therapy affordable and accessible for anybody who needs it. Arbay, a computer
-      science major with a concentration in cognitive science, was curious to learn more about the wide range of tasks
-      that working at a startup requires. As an intern at Easy EMDR, she took on projects focused on backend and UI
-      [user interface] software development. She also helped research a redesign of the startup’s mobile application.
-      “It was a really fun change to use my creativity more,” she says. “The project showed me that I want that
-      creativity in my development, and that I would like to work more on the UX [user experience] and UI side in the
-      future.” Arbay also learned from Jordan’s mentorship and support—an aspect of the experience she didn’t expect at
-      the start, given that Jordan is only a couple of years older than she is. “At first I was caught up in this
-      narrative that older people and people with experience have more to give to interns,” she says. “Not only did Zach
-      believe in my vision, he proved to me every day how competent and qualified he was to run this company. I came out
-      of it with a new belief that as a young person I should not be afraid of large projects and starting startups.
-      Anything is possible.” And in the span of ten weeks, Arbay was able to make an impact on Easy EMDR, too—and she’ll
-      continue her work there as a developer this fall. “Because of her work to help redesign and program our mobile
-      app, clients can find therapists easier, and therapists can communicate better with their clients,” Jordan says.
-      “I couldn’t be more impressed with what she was able to achieve in such a short time.”In 2019, as a student
-      employee in Macalester’s Entrepreneurship & Innovation Office, Ayça Arbay ’23 (Izmir, Turkey) took on an
-      assignment to edit a video for a new startup called Easy EMDR, founded by Zachary Jordan ’20. Three years later,
-      they collaborated again—this time through the college’s MacNest program, which connects students with local
-      startups for paid 10-week internships. Jordan, now Easy EMDR’s successful CEO, was named to Minne Inno’s “Inno
-      Under 25” list in 2020. Through Easy EMDR, he launched an app for mobile and web use that makes Eye Movement
-      Desensitization and Reprocessing (EMDR) treatment accessible and affordable by integrating the technology into
-      virtual therapy. He pledges 10 percent of Easy EMDR’s profits to nonprofit organizations, part of his broader
-      mission to make trauma therapy affordable and accessible for anybody who needs it. Arbay, a computer science major
-      with a concentration in cognitive science, was curious to learn more about the wide range of tasks that working at
-      a startup requires. As an intern at Easy EMDR, she took on projects focused on backend and UI [user interface]
-      software development. She also helped research a redesign of the startup’s mobile application. “It was a really
-      fun change to use my creativity more,” she says. “The project showed me that I want that creativity in my
-      development, and that I would like to work more on the UX [user experience] and UI side in the future.” Arbay also
-      learned from Jordan’s mentorship and support—an aspect of the experience she didn’t expect at the start, given
-      that Jordan is only a couple of years older than she is. “At first I was caught up in this narrative that older
-      people and people with experience have more to give to interns,” she says. “Not only did Zach believe in my
-      vision, he proved to me every day how competent and qualified he was to run this company. I came out of it with a
-      new belief that as a young person I should not be afraid of large projects and starting startups. Anything is
-      possible.” And in the span of ten weeks, Arbay was able to make an impact on Easy EMDR, too—and she’ll continue
-      her work there as a developer this fall. “Because of her work to help redesign and program our mobile app, clients
-      can find therapists easier, and therapists can communicate better with their clients,” Jordan says. “I couldn’t be
-      more impressed with what she was able to achieve in such a short time.”In 2019, as a student employee in
-      Macalester’s Entrepreneurship & Innovation Office, Ayça Arbay ’23 (Izmir, Turkey) took on an assignment to edit a
-      video for a new startup called Easy EMDR, founded by Zachary Jordan ’20. Three years later, they collaborated
-      again—this time through the college’s MacNest program, which connects students with local startups for paid
-      10-week internships. Jordan, now Easy EMDR’s successful CEO, was named to Minne Inno’s “Inno Under 25” list in
-      2020. Through Easy EMDR, he launched an app for mobile and web use that makes Eye Movement Desensitization and
-      Reprocessing (EMDR) treatment accessible and affordable by integrating the technology into virtual therapy. He
-      pledges 10 percent of Easy EMDR’s profits to nonprofit organizations, part of his broader mission to make trauma
-      therapy affordable and accessible for anybody who needs it. Arbay, a computer science major with a concentration
-      in cognitive science, was curious to learn more about the wide range of tasks that working at a startup requires.
-      As an intern at Easy EMDR, she took on projects focused on backend and UI [user interface] software development.
-      She also helped research a redesign of the startup’s mobile application. “It was a really fun change to use my
-      creativity more,” she says. “The project showed me that I want that creativity in my development, and that I would
-      like to work more on the UX [user experience] and UI side in the future.” Arbay also learned from Jordan’s
-      mentorship and support—an aspect of the experience she didn’t expect at the start, given that Jordan is only a
-      couple of years older than she is. “At first I was caught up in this narrative that older people and people with
-      experience have more to give to interns,” she says. “Not only did Zach believe in my vision, he proved to me every
-      day how competent and qualified he was to run this company. I came out of it with a new belief that as a young
-      person I should not be afraid of large projects and starting startups. Anything is possible.” And in the span of
-      ten weeks, Arbay was able to make an impact on Easy EMDR, too—and she’ll continue her work there as a developer
-      this fall. “Because of her work to help redesign and program our mobile app, clients can find therapists easier,
-      and therapists can communicate better with their clients,” Jordan says. “I couldn’t be more impressed with what
-      she was able to achieve in such a short time.”In 2019, as a student employee in Macalester’s Entrepreneurship &
-      Innovation Office, Ayça Arbay ’23 (Izmir, Turkey) took on an assignment to edit a video for a new startup called
-      Easy EMDR, founded by Zachary Jordan ’20. Three years later, they collaborated again—this time through the
-      college’s MacNest program, which connects students with local startups for paid 10-week internships. Jordan, now
-      Easy EMDR’s successful CEO, was named to Minne Inno’s “Inno Under 25” list in 2020. Through Easy EMDR, he launched
-      an app for mobile and web use that makes Eye Movement Desensitization and Reprocessing (EMDR) treatment accessible
-      and affordable by integrating the technology into virtual therapy. He pledges 10 percent of Easy EMDR’s profits to
-      nonprofit organizations, part of his broader mission to make trauma therapy affordable and accessible for anybody
-      who needs it. Arbay, a computer science major with a concentration in cognitive science, was curious to learn more
-      about the wide range of tasks that working at a startup requires. As an intern at Easy EMDR, she took on projects
-      focused on backend and UI [user interface] software development. She also helped research a redesign of the
-      startup’s mobile application. “It was a really fun change to use my creativity more,” she says. “The project
-      showed me that I want that creativity in my development, and that I would like to work more on the UX [user
-      experience] and UI side in the future.” Arbay also learned from Jordan’s mentorship and support—an aspect of the
-      experience she didn’t expect at the start, given that Jordan is only a couple of years older than she is. “At
-      first I was caught up in this narrative that older people and people with experience have more to give to
-      interns,” she says. “Not only did Zach believe in my vision, he proved to me every day how competent and qualified
-      he was to run this company. I came out of it with a new belief that as a young person I should not be afraid of
-      large projects and starting startups. Anything is possible.” And in the span of ten weeks, Arbay was able to make
-      an impact on Easy EMDR, too—and she’ll continue her work there as a developer this fall. “Because of her work to
-      help redesign and program our mobile app, clients can find therapists easier, and therapists can communicate
-      better with their clients,” Jordan says. “I couldn’t be more impressed with what she was able to achieve in such a
-      short time.”In 2019, as a student employee in Macalester’s Entrepreneurship & Innovation Office, Ayça Arbay ’23
-      (Izmir, Turkey) took on an assignment to edit a video for a new startup called Easy EMDR, founded by Zachary
-      Jordan ’20. Three years later, they collaborated again—this time through the college’s MacNest program, which
-      connects students with local startups for paid 10-week internships. Jordan, now Easy EMDR’s successful CEO, was
-      named to Minne Inno’s “Inno Under 25” list in 2020. Through Easy EMDR, he launched an app for mobile and web use
-      that makes Eye Movement Desensitization and Reprocessing (EMDR) treatment accessible and affordable by integrating
-      the technology into virtual therapy. He pledges 10 percent of Easy EMDR’s profits to nonprofit organizations, part
-      of his broader mission to make trauma therapy affordable and accessible for anybody who needs it. Arbay, a
-      computer science major with a concentration in cognitive science, was curious to learn more about the wide range
-      of tasks that working at a startup requires. As an intern at Easy EMDR, she took on projects focused on backend
-      and UI [user interface] software development. She also helped research a redesign of the startup’s mobile
-      application. “It was a really fun change to use my creativity more,” she says. “The project showed</p>
+    <!-- Main Content -->
+    <section class="main-section">
+        <!-- top header images -->
+        <div class="header-logos">
+            <img src="assets/images/main-section-assets/logo-1.png" alt="hero">
+            <img src="assets/images/main-section-assets/logo-2.png" alt="hero">
+        </div>
 
-    <h2>Collaboration and Growth</h2>
-    <p>In 2019, as a student employee in Macalester’s Entrepreneurship & Innovation Office, Ayça Arbay ’23 (Izmir,
-      Turkey) took on an assignment to edit a video for a new startup called Easy EMDR, founded by Zachary Jordan ’20.
-      Three years later, they collaborated again—this time through the college’s MacNest program, which connects
-      students with local startups for paid 10-week internships. Jordan, now Easy EMDR’s successful CEO, was named to
-      Minne Inno’s “Inno Under 25” list in 2020. Through Easy EMDR, he launched an app for mobile and web use that makes
-      Eye Movement Desensitization and Reprocessing (EMDR) treatment accessible and affordable by integrating the
-      technology into virtual therapy. He pledges 10 percent of Easy EMDR’s profits to nonprofit organizations, part of
-      his broader mission to make trauma therapy affordable and accessible for anybody who needs it. Arbay, a computer
-      science major with a concentration in cognitive science, was curious to learn more about the wide range of tasks
-      that working at a startup requires. As an intern at Easy EMDR, she took on projects focused on backend and UI
-      [user interface] software development. She also helped research a redesign of the startup’s mobile application.
-      “It was a really fun change to use my creativity more,” she says. “The project showed me that I want that
-      creativity in my development, and that I would like to work more on the UX [user experience] and UI side in the
-      future.” Arbay also learned from Jordan’s mentorship and support—an aspect of the experience she didn’t expect at
-      the start, given that Jordan is only a couple of years older than she is. “At first I was caught up in this
-      narrative that older people and people with experience have more to give to interns,” she says. “Not only did Zach
-      believe in my vision, he proved to me every day how competent and qualified he was to run this company. I came out
-      of it with a new belief that as a young person I should not be afraid of large projects and starting startups.
-      Anything is possible.” And in the span of ten weeks, Arbay was able to make an impact on Easy EMDR, too—and she’ll
-      continue her work there as a developer this fall. “Because of her work to help redesign and program our mobile
-      app, clients can find therapists easier, and therapists can communicate better with their clients,” Jordan says.
-      “I couldn’t be more impressed with what she was able to achieve in such a short time.”In 2019, as a student
-      employee in Macalester’s Entrepreneurship & Innovation Office, Ayça Arbay ’23 (Izmir, Turkey) took on an
-      assignment to edit a video for a new startup called Easy EMDR, founded by Zachary Jordan ’20. Three years later,
-      they collaborated again—this time through the college’s MacNest program, which connects students with local
-      startups for paid 10-week internships. Jordan, now Easy EMDR’s successful CEO, was named to Minne Inno’s “Inno
-      Under 25” list in 2020. Through Easy EMDR, he launched an app for mobile and web use that makes Eye Movement
-      Desensitization and Reprocessing (EMDR) treatment accessible and affordable by integrating the technology into
-      virtual therapy. He pledges 10 percent of Easy EMDR’s profits to nonprofit organizations, part of his broader
-      mission to make trauma therapy affordable and accessible for anybody who needs it. Arbay, a computer science major
-      with a concentration in cognitive science, was curious to learn more about the wide range of tasks that working at
-      a startup requires. As an intern at Easy EMDR, she took on projects focused on backend and UI [user interface]
-      software development. She also helped research a redesign of the startup’s mobile application. “It was a really
-      fun change to use my creativity more,” she says. “The project showed me that I want that creativity in my
-      development, and that I would like to work more on the UX [user experience] and UI side in the future.” Arbay also
-      learned from Jordan’s mentorship and support—an aspect of the experience she didn’t expect at the start, given
-      that Jordan is only a couple of years older than she is. “At first I was caught up in this narrative that older
-      people and people with experience have more to give to interns,” she says. “Not only did Zach believe in my
-      vision, he proved to me every day how competent and qualified he was to run this company. I came out of it with a
-      new belief that as a young person I should not be afraid of large projects and starting startups. Anything is
-      possible.” And in the span of ten weeks, Arbay was able to make an impact on Easy EMDR, too—and she’ll continue
-      her work there as a developer this fall. “Because of her work to help redesign and program our mobile app, clients
-      can find therapists easier, and therapists can communicate better with their clients,” Jordan says. “I couldn’t be
-      more impressed with what she was able to achieve in such a short time.”In 2019, as a student employee in
-      Macalester’s Entrepreneurship & Innovation Office, Ayça Arbay ’23 (Izmir, Turkey) took on an assignment to edit a
-      video for a new startup called Easy EMDR, founded by Zachary Jordan ’20. Three years later, they collaborated
-      again—this time through the college’s MacNest program, which connects students with local startups for paid
-      10-week internships. Jordan, now Easy EMDR’s successful CEO, was named to Minne Inno’s “Inno Under 25” list in
-      2020. Through Easy EMDR, he launched an app for mobile and web use that makes Eye Movement Desensitization and
-      Reprocessing (EMDR) treatment accessible and affordable by integrating the technology into virtual therapy. He
-      pledges 10 percent of Easy EMDR’s profits to nonprofit organizations, part of his broader mission to make trauma
-      therapy affordable and accessible for anybody who needs it. Arbay, a computer science major with a concentration
-      in cognitive science, was curious to learn more about the wide range of tasks that working at a startup requires.
-      As an intern at Easy EMDR, she took on projects focused on backend and UI [user interface] software development.
-      She also helped research a redesign of the startup’s mobile application. “It was a really fun change to use my
-      creativity more,” she says. “The project showed me that I want that creativity in my development, and that I would
-      like to work more on the UX [user experience] and UI side in the future.” Arbay also learned from Jordan’s
-      mentorship and support—an aspect of the experience she didn’t expect at the start, given that Jordan is only a
-      couple of years older than she is. “At first I was caught up in this narrative that older people and people with
-      experience have more to give to interns,” she says. “Not only did Zach believe in my vision, he proved to me every
-      day how competent and qualified he was to run this company. I came out of it with a new belief that as a young
-      person I should not be afraid of large projects and starting startups. Anything is possible.” And in the span of
-      ten weeks, Arbay was able to make an impact on Easy EMDR, too—and she’ll continue her work there as a developer
-      this fall. “Because of her work to help redesign and program our mobile app, clients can find therapists easier,
-      and therapists can communicate better with their clients,” Jordan says. “I couldn’t be more impressed with what
-      she was able to achieve in such a short time.”In 2019, as a student employee in Macalester’s Entrepreneurship &
-      Innovation Office, Ayça Arbay ’23 (Izmir, Turkey) took on an assignment to edit a video for a new startup called
-      Easy EMDR, founded by Zachary Jordan ’20. Three years later, they collaborated again—this time through the
-      college’s MacNest program, which connects students with local startups for paid 10-week internships. Jordan, now
-      Easy EMDR’s successful CEO, was named to Minne Inno’s “Inno Under 25” list in 2020. Through Easy EMDR, he launched
-      an app for mobile and web use that makes Eye Movement Desensitization and Reprocessing (EMDR) treatment accessible
-      and affordable by integrating the technology into virtual therapy. He pledges 10 percent of Easy EMDR’s profits to
-      nonprofit organizations, part of his broader mission to make trauma therapy affordable and accessible for anybody
-      who needs it. Arbay, a computer science major with a concentration in cognitive science, was curious to learn more
-      about the wide range of tasks that working at a startup requires. As an intern at Easy EMDR, she took on projects
-      focused on backend and UI [user interface] software development. She also helped research a redesign of the
-      startup’s mobile application. “It was a really fun change to use my creativity more,” she says. “The project
-      showed me that I want that creativity in my development, and that I would like to work more on the UX [user
-      experience] and UI side in the future.” Arbay also learned from Jordan’s mentorship and support—an aspect of the
-      experience she didn’t expect at the start, given that Jordan is only a couple of years older than she is. “At
-      first I was caught up in this narrative that older people and people with experience have more to give to
-      interns,” she says. “Not only did Zach believe in my vision, he proved to me every day how competent and qualified
-      he was to run this company. I came out of it with a new belief that as a young person I should not be afraid of
-      large projects and starting startups. Anything is possible.” And in the span of ten weeks, Arbay was able to make
-      an impact on Easy EMDR, too—and she’ll continue her work there as a developer this fall. “Because of her work to
-      help redesign and program our mobile app, clients can find therapists easier, and therapists can communicate
-      better with their clients,” Jordan says. “I couldn’t be more impressed with what she was able to achieve in such a
-      short time.”In 2019, as a student employee in Macalester’s Entrepreneurship & Innovation Office, Ayça Arbay ’23
-      (Izmir, Turkey) took on an assignment to edit a video for a new startup called Easy EMDR, founded by Zachary
-      Jordan ’20. Three years later, they collaborated again—this time through the college’s MacNest program, which
-      connects students with local startups for paid 10-week internships. Jordan, now Easy EMDR’s successful CEO, was
-      named to Minne Inno’s “Inno Under 25” list in 2020. Through Easy EMDR, he launched an app for mobile and web use
-      that makes Eye Movement Desensitization and Reprocessing (EMDR) treatment accessible and affordable by integrating
-      the technology into virtual therapy. He pledges 10 percent of Easy EMDR’s profits to nonprofit organizations, part
-      of his broader mission to make trauma therapy affordable and accessible for anybody who needs it. Arbay, a
-      computer science major with a concentration in cognitive science, was curious to learn more about the wide range
-      of tasks that working at a startup requires. As an intern at Easy EMDR, she took on projects focused on backend
-      and UI [user interface] software development. She also helped research a redesign of the startup’s mobile
-      application. “It was a really fun change to use my creativity more,” she says. “The project showed</p>
+        <!-- contributor detailed name  -->
+        <div class="project-info">
+            <h1>Organization Name: Pharo Consortium</h1>
+            <h2>Contributor: Neerja Doshi</h2>
+            <h2>Mentors: Domenico Cipriani, Nahuel Palumbo</h2>
+            <h3>
+                Project Repository:
+                <a href="https://github.com/neerja-1984/PAM-GSoC-25-Project" target="_blank">
+                    PAM-GSoC-25-Project
+                </a>
+            </h3>
+            <h3>Project Duration: May 9, 2025 – September 1, 2025</h3>
+        </div>
 
+        <div style="padding-left: 8%;">
+            ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
 
-      <!-- Timeline chart section -->
-      <div class="timeline-container">
-        <div class="timeline-header">
-            <h1>🎯 PAM GSoC 2025 Journey</h1>
-            <p>From SAM Research to Speaking Pharo - A Text-to-Speech Adventure</p>
-            <div class="timeline-stats">
-                <div class="stat-item">
-                    <div class="stat-number">101</div>
-                    <div class="stat-label">Commits</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">Months</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">47</div>
-                    <div class="stat-label">Phonemes</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">450</div>
-                    <div class="stat-label">Rules</div>
-                </div>
+        <!-- deliverables block -->
+        <h1 style="margin-left: 5rem;" id="deliverables">My Deliverables 😎</h1>
+        <h2 class="caption">
+            TTS conversion code snippet and its Transcript (Logs)
+        </h2>
+        <div class="deliverables-block">
+            <div class="media-pair">
+                <video controls src="Readme/readme-images-vc/20250827-1746-13.8824086.mp4" title="TTS Output"></video>
+                <img src="Readme/readme-images-vc/image-252.png" alt="Transcript Logs">
             </div>
         </div>
 
-        <div class="timeline-line"></div>
 
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">📚</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">🔬</div>
-                    <div class="content-title">
-                        <h3>Community Bonding & SAM Deep Dive</h3>
-                        <div class="content-date">May 2025</div>
-                    </div>
-                </div>
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Initial mentorship meetings with Domenico & Nahuel established project foundation. Deep research into SAM's 450 phonetic rules, IPA phoneme mapping, and understanding reciter logic. Created first interactive SAM visualization and set up development environment with Pharo & Iceberg.
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">SAM Research</span>
-                        <span class="tag">IPA Phonemes</span>
-                        <span class="tag">Mentor Meetings</span>
-                        <span class="tag">Project Setup</span>
-                        <span class="tag">Visualization</span>
-                    </div>
-                </div>
-            </div>
+        <!-- code like text block -->
+        <h1 style="margin-left: 5rem;">Plug in these Code Snippets in Playground to hear PAM speak ! ❤️</h1>
+        <div class="code-block">
+            <pre><code>
+        <span class="var">| dsp |</span>
+        
+        <span class="comment">"initliase the DSP class"</span>
+        <span class="var">dsp</span> := <span class="class">PAMDsp</span> new.
+        
+        <span class="comment">"audio for a array of numbers"</span>
+        <span class="var">dsp</span> sayNumbers: <span class="number">#(5 6 7 2)</span>.
+        
+        <span class="comment">"audio for all numbers from 0 to 9"</span>
+        <span class="var">dsp</span> sayNumbers0to9.
+        
+        <span class="comment">"audio for sentence"</span>
+        <span class="var">dsp</span> sayText: <span class="string">'Dogs'</span>.
+        
+        <span class="comment">"audio for sentence with prosody and child preset"</span>
+        <span class="var">dsp</span> sayTextWithProsody: <span class="string">'Dogs'</span> asChild: <span class="bool">true</span>.
+        
+        <span class="comment">"audio for sentence with prosody and adult preset"</span>
+        <span class="var">dsp</span> sayTextWithProsody: <span class="string">'golf day!'</span> asChild: <span class="bool">false</span>.
+        
+        <span class="comment">"Transcript for logs"</span>
+        Transcript open.
+        </code></pre>
         </div>
 
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">⚙️</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">🧠</div>
-                    <div class="content-title">
-                        <h3>Pharo Foundation & Constants Implementation</h3>
-                        <div class="content-date">June 2025</div>
-                    </div>
-                </div>
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Successfully converted SAM constants and character flags to Pharo. Mastered class-side vs instance-side methods, implemented comprehensive test suites, and established proper OOP architecture. Created alphabet-to-decimal mapping utilities and learned advanced Pharo debugging techniques.
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">Pharo Mastery</span>
-                        <span class="tag">Constants Migration</span>
-                        <span class="tag">Test Driven Development</span>
-                        <span class="tag">OOP Architecture</span>
-                        <span class="tag">Character Flags</span>
-                    </div>
-                </div>
-            </div>
+        <div class="text-block">
+            💡 Head over to <strong>PAM-Core >> PAMDspExamples >> class-side</strong> → click the <em>notepad icon</em>
+            next to
+            <br><strong>sayNumbers0to9, sayText:, sayTextWithProsody:asChild</strong> to hear them speak!
+            (A quick and easy way to test TTS 🎙️)
         </div>
 
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">🎯</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">📝</div>
-                    <div class="content-title">
-                        <h3>Rules Engine & Pattern Matching Logic</h3>
-                        <div class="content-date">Mid-June 2025</div>
-                    </div>
-                </div>
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Implemented complex rule parsing system with prefix-pattern-suffix matching. Developed closures-based architecture for rule validation, created comprehensive letter-specific rule dictionaries, and achieved working textToPhoneme conversion for basic words like "HELLO" and "COLLEGE".
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">Pattern Matching</span>
-                        <span class="tag">Rule Engine</span>
-                        <span class="tag">Closures</span>
-                        <span class="tag">Dictionary Architecture</span>
-                        <span class="tag">Text Processing</span>
-                    </div>
-                </div>
+        <!-- main text -->
+        <h1 id="project-abstract">Project Abstract 😎 </h1>
+        <p>
+            PAM (Pharo Automated Mouth) is a rule-based Text-to-Speech (TTS) system developed for the Pharo environment.
+            Unlike modern deep-learning TTS systems that require extensive datasets and computational resources,
+            PAM employs a lightweight rule-based approach inspired by the classic
+            <a href="https://discordier.github.io/sam/" target="_blank">SAM (Software Automatic Mouth)</a> system.
+            The project successfully implements text-to-phoneme conversion using <strong>402 English to Grapheme rules
+                and 47 Grapheme to IPA phoeneme conversion rules.</strong> It integrates with Phausto
+            for audio synthesis, enabling prosodic speech generation with controllable parameters like pitch, amplitude,
+            and duration.
+        </p>
+
+        <h2>Core Architecture</h2>
+        <p>PAM consists of four main components:</p>
+
+        <p><strong>Reciter Engine</strong>: Class <code>Reciter</code> → Converts English text to graphemes using
+            pattern-matching rules. The rules are adapted from SAM.</p>
+
+        <p><strong>IPA Converter</strong>: Class <code>PhonemeToIPAConvertor</code> → Transforms graphemes into
+            International Phonetic Alphabet (IPA) format of phonemes.</p>
+
+        <p><strong>Audio Synthesis</strong>: Class <code>PAMDsp</code> → Leverages Phausto’s DSP capabilities for speech
+            generation.</p>
+
+        <p><strong>Prosody Generation</strong>: Class <code>Parser</code> → Gives prosody to PAM by tweaking frequency,
+            amplitude, length dynamics, and generating age-like voice variations.</p>
+
+
+        <section id="accomplishments">
+            <h1 id="major-accomplishments">Major Accomplishments ❤️</h1>
+
+            <!-- 1 -->
+            <h2>1. Complete Rule Engine Implementation (June–July 2025)</h2>
+            <h3><strong>Duration:</strong> ~6 weeks</h3>
+            <p><strong>Achievement:</strong> Successfully implemented all 26 letter rules with comprehensive test
+                coverage.</p>
+            <ul>
+                <li>Created hierarchical rule system with parent <strong>LetterRules</strong> class and 26 child classes
+                    (A–Z)</li>
+                <li>Total rule count: <strong>402</strong></li>
+                <li>Implemented special character matching for prefix/suffix contexts (<code>#</code>, <code>^</code>,
+                    <code>@</code>, <code>%</code>)
+                </li>
+                <li>Added comprehensive test suite covering all alphabetic conversions</li>
+            </ul>
+
+            <div class="code-block">
+                <pre><code>
+      <span class="comment">"Gasoline test"</span>
+      
+      <span class="var">| phonemeOutput inputText |</span>
+      <span class="var">inputText</span> := <span class="string">'Gasoline'</span>.
+      
+      <span class="var">phonemeOutput</span> := <span class="class">Reciter</span> textToPhonemes: inputText.
+      
+      <span class="var">self</span> assert: phonemeOutput equals: <span class="number">#('G' 'EY4S' 'OW' 'L' 'IH' 'N' 'EH')</span>.
+          </code></pre>
             </div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">🐛</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">🔧</div>
-                    <div class="content-title">
-                        <h3>Major Bug Fixes & Logger Implementation</h3>
-                        <div class="content-date">Late June 2025</div>
-                    </div>
-                </div>
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Fixed critical sentence parsing issues and wrong phoneme generation caused by rule ordering problems. Implemented SpringBoot-style logger system, resolved space handling in textToPhoneme, and achieved green test status for all alphabet rules with proper pattern priority matching.
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">Bug Resolution</span>
-                        <span class="tag">Logger System</span>
-                        <span class="tag">Rule Prioritization</span>
-                        <span class="tag">Space Handling</span>
-                        <span class="tag">Green Tests</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">🎵</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">🔊</div>
-                    <div class="content-title">
-                        <h3>First Audio Success with Phausto Integration</h3>
-                        <div class="content-date">July 2025</div>
-                    </div>
-                </div>
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Breakthrough moment! Successfully integrated TPSampler and DSP for audio playback. Implemented number audio samples (0-9), resolved Windows/Mac path separator issues, and created first working audio output. Added pragma annotations and fork-based asynchronous audio processing.
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">Phausto Integration</span>
-                        <span class="tag">Audio Processing</span>
-                        <span class="tag">TPSampler</span>
-                        <span class="tag">Cross-platform</span>
-                        <span class="tag">Async Processing</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">🌟</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">🎤</div>
-                    <div class="content-title">
-                        <h3>Phoneme-to-IPA Conversion & Speaking Words</h3>
-                        <div class="content-date">Late July 2025</div>
-                    </div>
-                </div>
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Developed sophisticated phoneme-to-IPA converter using recursive greedy approach. Created comprehensive mapping dictionary, implemented compound phoneme splitting logic, and achieved first successful word pronunciation ("DOG"). Established sorted audio file indexing system for accurate phoneme playback.
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">IPA Conversion</span>
-                        <span class="tag">Recursive Algorithm</span>
-                        <span class="tag">Speaking Words</span>
-                        <span class="tag">Audio Indexing</span>
-                        <span class="tag">Phoneme Mapping</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">🎭</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">🎛️</div>
-                    <div class="content-title">
-                        <h3>Prosody & Voice Synthesis Mastery</h3>
-                        <div class="content-date">Mid-August 2025</div>
-                    </div>
-                </div>
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Implemented advanced prosody controls with stress-based amplitude and duration calculations. Added age-based voice presets (adult vs child), developed comprehensive audio parameter tuning (pitch, volume, note stretching), and converted mono audio samples to stereo for proper playback compatibility.
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">Prosody Control</span>
-                        <span class="tag">Voice Synthesis</span>
-                        <span class="tag">Age-based Voices</span>
-                        <span class="tag">Audio Parameters</span>
-                        <span class="tag">Stereo Conversion</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">📦</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">⚡</div>
-                    <div class="content-title">
-                        <h3>Metacello Baseline & Project Optimization</h3>
-                        <div class="content-date">Late August 2025</div>
-                    </div>
-                </div>
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Created comprehensive Metacello baseline for seamless project installation. Resolved dependency conflicts, implemented proper package management, and achieved successful deployment in fresh Pharo images. All tests green with automated dependency resolution and conflict handling.
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">Metacello</span>
-                        <span class="tag">Package Management</span>
-                        <span class="tag">Deployment</span>
-                        <span class="tag">Dependency Resolution</span>
-                        <span class="tag">Project Distribution</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot" onclick="toggleContent(this)">🎉</div>
-            <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
-                <div class="content-header">
-                    <div class="content-icon">🏆</div>
-                    <div class="content-title">
-                        <h3>Final Integration & GSoC Success</h3>
-                        <div class="content-date">August 2025</div>
-                    </div>
-                
-
-                
-                  <div class="content-badge" onclick="createConfetti()">
-                      ✨101st Commit Achievement ✨
-                      <div class="sparkle"></div>
-                      <div class="sparkle"></div>
-                      <div class="sparkle"></div>
-                      <div class="sparkle"></div>
-                      <div class="sparkle"></div>
-                      <div class="sparkle"></div>
-                  </div>
-                </div>
-
-                <div class="expanded-content">
-                    <div class="content-description">
-                        Completed full text-to-speech pipeline with prosodic control! Final PAMDsp implementation supports natural speech synthesis with age-based voice characteristics, stress-sensitive pronunciation, and seamless phoneme playback. Successfully demonstrated complete "Hello World" to complex sentence synthesis with professional-quality results.
-                    </div>
-                    <div class="content-tags">
-                        <span class="tag">Complete TTS Pipeline</span>
-                        <span class="tag">Natural Speech</span>
-                        <span class="tag">GSoC Success</span>
-                        <span class="tag">Production Ready</span>
-                        <span class="tag">Professional Quality</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section-tiles">
-
-      <!-- blog 1 -->
-      <div class="blog-tile">
-        <a href="https://medium.com/@nirjadoshi2003/the-hows-of-written-english-to-spoken-english-080d368d774b" 
-           target="_blank" class="blog-link">
-          <div class="blog-content">
-
-             <!-- sticker / circular image -->
-              <div class="blog-image">
-                <img src="assets/Gifs/Speech.gif" alt="Blog sticker">
-              </div>
-
-            <!-- blog title -->
-            <h4 class="blog-title">The How’s of Written English to Spoken English</h4>
-            <p class="blog-meta">
-              <span class="author">✍️ Neerja D</span> · 
-              <span class="time">9 min read</span> · 
-              <span class="date">Aug 4, 2025</span>
+            <p><strong>Test Results:</strong> All English words can be correctly converted to phonemes like
+                <code>Gasoline → ('G' 'EY4S' 'OW' 'L' 'IH' 'N' 'EH')</code>.
             </p>
-          </div>
-        </a>
-      </div>  
 
-      <!-- blog 2 -->
-      <div class="blog-tile">
-        <a href="https://medium.com/@nirjadoshi2003/the-hows-of-written-english-to-spoken-english-080d368d774b" 
-           target="_blank" class="blog-link">
-          <div class="blog-content">
+            <!-- 2 -->
+            <h2>2. IPA Phoneme Conversion System (July–August 2025)</h2>
+            <h3><strong>Duration:</strong> ~3 weeks</h3>
+            <p><strong>Achievement:</strong> Developed recursive SAM Phoneme (Grapheme) to IPA Phoeneme converter for
+                audio file mapping.</p>
+            <p><strong>Pseudocode for Recursive compound phoneme splitting</strong></p>
+            <div class="code-block">
+                <pre><code>
+      <span class="var">splitCompoundPhoneme:</span> <span class="string">'RIY'</span>
+          → splits to: <span class="number">#('R' 'IY')</span>  
+          → converts to: <span class="number">#('r' 'i_colon')</span>
+          </code></pre>
+            </div>
 
-             <!-- sticker / circular image -->
-              <div class="blog-image">
-                <img src="assets/Gifs/system-design.gif" alt="Blog sticker" >
-              </div>
 
-            <!-- blog title -->
-            <h4 class="blog-title">The How’s of Written English to Spoken English</h4>
-            <p class="blog-meta">
-              <span class="author">✍️ Neerja D</span> · 
-              <span class="time">9 min read</span> · 
-              <span class="date">Aug 4, 2025</span>
-            </p>
-          </div>
-        </a>
-      </div>  
+            <!-- 3 -->
+            <h2>3. Audio Synthesis Integration (August 2025)</h2>
+            <h3><strong>Duration:</strong> ~2 weeks</h3>
+            <p><strong>Achievement:</strong> Complete integration with Phausto DSP system.</p>
 
-      <!-- blog 3 -->
-      <div class="blog-tile">
-        <a href="https://medium.com/@nirjadoshi2003/the-hows-of-written-english-to-spoken-english-080d368d774b" 
-           target="_blank" class="blog-link">
-          <div class="blog-content">
+            <p><strong>PAMDsp Class Features:</strong></p>
+            <div class="code-block">
+                <pre><code>
+      <span class="comment">"Complete TTS with prosody"</span>
+      <span class="var">dsp</span> := <span class="class">PAMDsp</span> new.
+      <span class="var">dsp</span> sayTextWithProsody: <span class="string">'hello'</span> asChild: <span class="bool">false</span>.
+      
+      <span class="comment">"Number sequence generation"</span>
+      <span class="var">dsp</span> sayNumbers: <span class="number">#(1 3 5 7)</span>.
+          </code></pre>
+            </div>
 
-             <!-- sticker / circular image -->
-              <div class="blog-image">
-                <img src="assets/Gifs/Speech.gif" alt="Blog sticker">
-              </div>
+            <p><strong>Audio Parameters Implemented:</strong></p>
+            <ul>
+                <li><strong>Pitch Control:</strong> male: 275Hz, child: 500Hz</li>
+                <li><strong>Amplitude Control:</strong> 0.5–1.0 range with stress-based modulation</li>
+                <li><strong>Duration Control:</strong> 0.1–0.4 seconds based on phoneme stress values</li>
+            </ul>
+            <br>
+            <p><strong>Prosody Formula:</strong></p>
+            <div class="code-block">
+                <pre><code>
+          <span class="method">durationForStress:</span> <span class="var">stress</span>  
+              <span class="comment">"Map stress in range [4..6] with duration in range [0.1..0.4].
+          
+                  ----- INDEX ----
+                   4 = short/fast (0.1s), 
+                   6 = long/slow (0.4s)."</span>
+              ^ <span class="number">0.1</span> + (((<span class="var">stress</span> - <span class="number">4</span>) / <span class="number">2.0</span>) * <span class="number">0.3</span>)
+          
+          
+          <span class="method">amplitudeForStress:</span> <span class="var">stress</span>  
+              <span class="comment">"Map stress in range [4..6] with amplitude in range [0.5..1.0].
+          
+                  ----- INDEX ----
+                   4 = soft (0.5), 
+                   6 = strong (1.0)."</span>
+              ^ <span class="number">0.5</span> + (((<span class="var">stress</span> - <span class="number">4</span>) / <span class="number">2.0</span>) * <span class="number">0.5</span>)
+            </code></pre>
+            </div>
 
-            <!-- blog title -->
-            <h4 class="blog-title">The How’s of Written English to Spoken English</h4>
-            <p class="blog-meta">
-              <span class="author">✍️ Neerja D</span> · 
-              <span class="time">9 min read</span> · 
-              <span class="date">Aug 4, 2025</span>
-            </p>
-          </div>
-        </a>
-      </div>  
-  </section>
 
-  <!-- Waves only, act as divider -->
-  <section class="waves-section">
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
+            <!-- 4 -->
+            <h2>4. Package Management & Distribution</h2>
+            <h3><strong>Achievement:</strong> Created production-ready Pharo package with Metacello integration.</h3>
 
-  <footer class="footer">
-    <p class="crafted">
-      <em>© Made with</em> ☕,🌻 <em> & love by <a href="https://github.com/neerja-1984" target="_blank">Neerja  </a></em>❤️ ·
-       <em> 2025</em>
-    </p>
-    <p class="credits">
-      <span class="music-note">🎶</span>
-      <em>Background vibes thanks to
-        <a href="https://www.youtube.com/@RamaLow" target="_blank">RamaLow</a>
-      </em>
-    </p>
-  </footer>
-  <!-- script -->
-  <script src="script.js"></script>
+            <p><em>One-line installation command</em></p>
+            <div class="code-block">
+                <pre><code>
+      <span class="class">Metacello</span> new
+          baseline: <span class="string">'PAM'</span>;
+          repository: <span class="string">'github://neerja-1984/PAM-GSoC-25-Project:master/src'</span>;
+          onConflict: [ :ex | <span class="var">ex</span> useIncoming ];
+          onUpgrade: [ :ex | <span class="var">ex</span> useIncoming ];
+          load.
+          </code></pre>
+            </div>
+        </section>
+
+        <h1 id="technical-challenges">Technical Challenges Overcome 😎</h1>
+
+        <h2>1. Rule Ordering Bug Resolution</h2>
+
+        <div class="code-block">
+            <code>
+    1.    self addRule: '(BREAK)' replacement: 'BREY5K'.<br>
+    2.    self addRule: '(B)' replacement: 'B'
+    </code>
+        </div>
+
+
+        <p><strong>Problem:</strong> Multiple rules matched the same input, leading to incorrect phoneme selection
+            for word <strong>"BREAK"</strong>.</p>
+
+        <p><strong>Solution:</strong> Hence, first match all rules -> amongst all selected rules --> choose the one of
+            longest length.</p>
+
+        <p><strong>Impact:</strong> Ensured accurate English text-to-phoneme conversion.</p>
+
+        <h2>2. DSP Stereo Bug</h2>
+
+        <div class="code-block">
+            <pre><code>
+            <span class="var">sampler</span> := <span class="class">TpSampler</span> new.
+            <span class="var">sampler</span> label: aLabel.
+            
+            <span class="var">samplePlayer</span> := <span class="var">sampler</span> pathToFolder: <span class="var">folderPath</span>.
+            
+            <span class="comment">"problem inducing line"</span>
+            <span class="var">dspInstance</span> := <span class="var">samplePlayer</span> stereo asDsp.
+            </code></pre>
+        </div>
+
+        <p><strong>Problem:</strong> Our audio files were a mix of both Mono and Stereo.Hence, some audio files couldn't
+            be heard properly</p>
+        <p><strong>Solution:</strong>Developed FFmpeg + helper scripts to convert mono audio files to stereo.</p>
+        <p><strong>Impact:</strong> Reliable playback for all phonemes, standardized pipeline.</p>
+
+        <h2>3. Phoneme File Indexing Bug</h2>
+
+        <div class="code-block">
+            <pre><code>
+          <span class="var">myString</span> := <span class="class">Reciter</span> textToIPAPhonemes: <span class="string">'book'</span>.
+          <span class="comment">"myString = #('b' 'ʊ' 'k')"</span>
+
+          <span class="comment">"list -> our audio files (presumably sorted by OS)"</span>
+          <span class="comment">"for each character of myString -> find indexOf character from the list"</span>
+          <span class="comment">"can be an issue: Files sorted by OS are platform-dependent and differ from how Phausto sorts them"</span>
+          
+          [<span class="var">myString</span> do: [ :<span class="var">i</span> |  
+              <span class="var">dsp</span> setValue: ( <span class="var">list</span> indexOf: <span class="var">i</span> ) parameter: <span class="string">'PAMSamplerIndex'</span>.
+              <span class="var">dsp</span> trig: <span class="string">'PAMSamplerGate'</span>.
+              <span class="number">0.2</span> seconds wait
+          ]] fork.
+            </code></pre>
+        </div>
+
+
+        <h3>Image 1 is how phausto sorts them, Image 2 is how Windows Filesystem sorts them</h3>
+        <div class="header-logos">
+            <img src="Readme/readme-images-vc/image-201.png" alt="hero">
+            <img src="Readme/readme-images-vc/image-253.png" alt="hero">
+        </div>
+
+        <div>
+            <p><strong>Problem:</strong> Phausto expects files to be in a sorted order, as it uses the index to map the
+                phoneme to the audio file as seen in the above code snippet. </p>
+            <p><strong>Solution:</strong> Added renaming script to rename all files as
+                <code>number_phonemeName.wav</code>.</p>
+            <p><strong>Impact:</strong> Files are now sorted according to how Phauto sorts them. Files are now renamed
+                as : 001_a_colon.wav, 002_aɪ.wav, 003_aʊ.wav, </p>
+        </div>
+        </div>
+
+        <h2>4. Cross-Platform Path Handling</h2>
+
+        <div class="code-block">
+            <pre><code>
+  <span class="var">folderPath</span> := <span class="class">FileLocator</span> documents / <span class="var">aFolderName</span>.
+    </code></pre>
+        </div>
+
+        <p><strong>Problem:</strong> Windows/macOS path separators differ, causing issues with folders of numbers and
+            phonemes stored in <code>Documents</code> (e.g., <code>C:\Users&lt;your-name&gt;\Documents\numbers</code>).
+        </p>
+        <p><strong>Solution:</strong> Implemented <code>FileLocator</code>-based path resolution to generate
+            OS-independent paths.</p>
+        <p><strong>Impact:</strong> Seamless cross-platform deployment; generalized way to configure paths for any OS.
+        </p>
+
+        <h2>5. Audio Metadata Issue</h2>
+        <p><strong>Problem:</strong> Phausto (via libsndfile) cannot properly read audio files containing metadata tags.
+        </p>
+        <p><strong>Solution:</strong> Stripped metadata from all phoneme audio files using <a
+                href="https://online-audio-converter.com/">online-audio-converter.com</a>. Confirmed playback success
+            after conversion. </p>
+
+        <!-- Timeline chart section -->
+        <h1 id="timeline">Timeline Chart of PAM Development ❤️</h1>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">📚</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">🔬</div>
+                        <div class="content-title">
+                            <h3>Community Bonding & SAM Deep Dive</h3>
+                            <div class="content-date">May 2025</div>
+                        </div>
+                    </div>
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Initial mentorship meetings with Domenico & Nahuel established project foundation. Deep
+                            research into SAM's 450 phonetic rules, IPA phoneme mapping, and understanding reciter
+                            logic. Created first interactive SAM visualization and set up development environment with
+                            Pharo & Iceberg.
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">SAM Research</span>
+                            <span class="tag">IPA Phonemes</span>
+                            <span class="tag">Mentor Meetings</span>
+                            <span class="tag">Project Setup</span>
+                            <span class="tag">Visualization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">⚙️</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">🧠</div>
+                        <div class="content-title">
+                            <h3>Pharo Foundation & Constants Implementation</h3>
+                            <div class="content-date">June 2025</div>
+                        </div>
+                    </div>
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Successfully converted SAM constants and character flags to Pharo. Mastered class-side vs
+                            instance-side methods, implemented comprehensive test suites, and established proper OOP
+                            architecture. Created alphabet-to-decimal mapping utilities and learned advanced Pharo
+                            debugging techniques.
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">Pharo Mastery</span>
+                            <span class="tag">Constants Migration</span>
+                            <span class="tag">Test Driven Development</span>
+                            <span class="tag">OOP Architecture</span>
+                            <span class="tag">Character Flags</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">🎯</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">📝</div>
+                        <div class="content-title">
+                            <h3>Rules Engine & Pattern Matching Logic</h3>
+                            <div class="content-date">Mid-June 2025</div>
+                        </div>
+                    </div>
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Implemented complex rule parsing system with prefix-pattern-suffix matching. Developed
+                            closures-based architecture for rule validation, created comprehensive letter-specific rule
+                            dictionaries, and achieved working textToPhoneme conversion for basic words like "HELLO" and
+                            "COLLEGE".
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">Pattern Matching</span>
+                            <span class="tag">Rule Engine</span>
+                            <span class="tag">Closures</span>
+                            <span class="tag">Dictionary Architecture</span>
+                            <span class="tag">Text Processing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">🐛</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">🔧</div>
+                        <div class="content-title">
+                            <h3>Major Bug Fixes & Logger Implementation</h3>
+                            <div class="content-date">Late June 2025</div>
+                        </div>
+                    </div>
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Fixed critical sentence parsing issues and wrong phoneme generation caused by rule ordering
+                            problems. Implemented SpringBoot-style logger system, resolved space handling in
+                            textToPhoneme, and achieved green test status for all alphabet rules with proper pattern
+                            priority matching.
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">Bug Resolution</span>
+                            <span class="tag">Logger System</span>
+                            <span class="tag">Rule Prioritization</span>
+                            <span class="tag">Space Handling</span>
+                            <span class="tag">Green Tests</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">🎵</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">🔊</div>
+                        <div class="content-title">
+                            <h3>First Audio Success with Phausto Integration</h3>
+                            <div class="content-date">July 2025</div>
+                        </div>
+                    </div>
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Breakthrough moment! Successfully integrated TPSampler and DSP for audio playback.
+                            Implemented number audio samples (0-9), resolved Windows/Mac path separator issues, and
+                            created first working audio output. Added pragma annotations and fork-based asynchronous
+                            audio processing.
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">Phausto Integration</span>
+                            <span class="tag">Audio Processing</span>
+                            <span class="tag">TPSampler</span>
+                            <span class="tag">Cross-platform</span>
+                            <span class="tag">Async Processing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">🌟</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">🎤</div>
+                        <div class="content-title">
+                            <h3>Phoneme-to-IPA Conversion & Speaking Words</h3>
+                            <div class="content-date">Late July 2025</div>
+                        </div>
+                    </div>
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Developed sophisticated phoneme-to-IPA converter using recursive greedy approach. Created
+                            comprehensive mapping dictionary, implemented compound phoneme splitting logic, and achieved
+                            first successful word pronunciation ("DOG"). Established sorted audio file indexing system
+                            for accurate phoneme playback.
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">IPA Conversion</span>
+                            <span class="tag">Recursive Algorithm</span>
+                            <span class="tag">Speaking Words</span>
+                            <span class="tag">Audio Indexing</span>
+                            <span class="tag">Phoneme Mapping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">🎭</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">🎛️</div>
+                        <div class="content-title">
+                            <h3>Prosody & Voice Synthesis Mastery</h3>
+                            <div class="content-date">Mid-August 2025</div>
+                        </div>
+                    </div>
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Implemented advanced prosody controls with stress-based amplitude and duration calculations.
+                            Added age-based voice presets (adult vs child), developed comprehensive audio parameter
+                            tuning (pitch, volume, note stretching), and converted mono audio samples to stereo for
+                            proper playback compatibility.
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">Prosody Control</span>
+                            <span class="tag">Voice Synthesis</span>
+                            <span class="tag">Age-based Voices</span>
+                            <span class="tag">Audio Parameters</span>
+                            <span class="tag">Stereo Conversion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">📦</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">⚡</div>
+                        <div class="content-title">
+                            <h3>Metacello Baseline & Project Optimization</h3>
+                            <div class="content-date">Late August 2025</div>
+                        </div>
+                    </div>
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Created comprehensive Metacello baseline for seamless project installation. Resolved
+                            dependency conflicts, implemented proper package management, and achieved successful
+                            deployment in fresh Pharo images. All tests green with automated dependency resolution and
+                            conflict handling.
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">Metacello</span>
+                            <span class="tag">Package Management</span>
+                            <span class="tag">Deployment</span>
+                            <span class="tag">Dependency Resolution</span>
+                            <span class="tag">Project Distribution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" onclick="toggleContent(this)">🎉</div>
+                <div class="timeline-content" onclick="toggleContent(this.previousElementSibling)">
+                    <div class="content-header">
+                        <div class="content-icon">🏆</div>
+                        <div class="content-title">
+                            <h3>Final Integration & GSoC Success</h3>
+                            <div class="content-date">August 2025</div>
+                        </div>
+
+
+
+                        <div class="content-badge" onclick="createConfetti()">
+                            ✨101st Commit Achievement ✨
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                        </div>
+                    </div>
+
+                    <div class="expanded-content">
+                        <div class="content-description">
+                            Completed full text-to-speech pipeline with prosodic control! Final PAMDsp implementation
+                            supports natural speech synthesis with age-based voice characteristics, stress-sensitive
+                            pronunciation, and seamless phoneme playback. Successfully demonstrated complete "Hello
+                            World" to complex sentence synthesis with professional-quality results.
+                        </div>
+                        <div class="content-tags">
+                            <span class="tag">Complete TTS Pipeline</span>
+                            <span class="tag">Natural Speech</span>
+                            <span class="tag">GSoC Success</span>
+                            <span class="tag">Production Ready</span>
+                            <span class="tag">Professional Quality</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="quality-testing-section" id="quality-testing">
+            <h1 class="qt-title" id="code-quality-testing">Code Quality & Testing ❤️</h1>
+          
+            <h2 class="qt-subtitle">Comprehensive Test Suite</h2>
+            <ul class="qt-list">
+              <li>86 unit tests covering all conversion scenarios</li>
+              <li>Green test status across full alphabet</li>
+            </ul>
+          
+            <h2 class="qt-subtitle">Clean Architecture</h2>
+            <ul class="qt-list">
+              <li>Object-oriented design with clear separation of concerns</li>
+              <li>Utility classes for logging, path handling, and audio management</li>
+            </ul>
+          
+            <h2 class="qt-subtitle">Performance Metrics</h2>
+            <table class="qt-metrics-table">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Package Memory Consumption</td>
+                  <td>< 1 GB [Package size]</td>
+                </tr>
+                <tr>
+                  <td>Rule Database [English letters → Graphene]</td>
+                  <td>402 rules across 26 letters</td>
+                </tr>
+                <tr>
+                  <td>Rule Database [SAM Phoneme (Grapheme) → IPA phoneme]</td>
+                  <td>47 rules</td>
+                </tr>
+                <tr>
+                  <td>Audio Sample Count</td>
+                  <td>44 IPA phonemes + 10 numbers</td>
+                </tr>
+                <tr>
+                  <td>Package Load Time</td>
+                  <td>&lt;30 seconds</td>
+                </tr>
+              </tbody>
+            </table>
+          
+            <h2 class="qt-subtitle">Contribution Summary</h2>
+            <ul class="qt-list">
+              <li><strong>Total Commits:</strong> 109</li>
+              <li><strong>Lines of Code:</strong> 5053 (as of writing this document)</li>
+              <li><strong>Project Status:</strong> Production ready, with Metacello script, full documentation and test coverage</li>
+            </ul>
+          </section>
+
+            <h1 id="future-development">Future Development Opportunities 😎</h1>
+        
+              <p><strong>Enhanced Prosody:</strong> Implement formant synthesis for more natural speech patterns.</p>
+              <p><strong>Voice Customization:</strong> Additional gender voice presets.</p>
+              <p><strong>Real-time Processing:</strong> Streaming audio generation for long texts.</p>
+          
+                <h1 class="ack-title" id="acknowledgements">Acknowledgements ❤️</h1>
+                <p>
+                  Special thanks to my mentors <strong>Domenico Cipriani</strong> and <strong>Nahuel Palumbo</strong> 
+                  for all their guidance. Starting from Pharo architecture, DSP integration, software engineering best practices  to Debugging sessions we've had. PAM wouldn't have reached this stage if it wasn't for their guidance. 
+                  Their expertise in both linguistic processing and audio synthesis was instrumental in achieving the project goals.
+                </p>
+                <h3>Noteworthy links</h3>
+                <p>
+                  1. The project builds upon the foundational work of the original 
+                  <a href="https://discordier.github.io/sam/" target="_blank">SAM system</a> 
+                  and leverages the modern capabilities of 
+                  <a href="https://github.com/lucretiomsp/phausto" target="_blank">Phausto</a> 
+                  for audio generation.
+                </p>
+                <p>
+                  2. Understanding IPA phoenems : <a href="https://gist.github.com/walkoncross/33059e1249a24d7596a7abb8c5cec986#-vowels" target="_blank">WalkOnCross Github.</a>
+                    Dataset of 44 Phoneme taken from here: <a href="https://github.com/moh3n9595/phonemes-dataset" target="_blank">Github</a>
+                </p>
+                <p>
+                  3. Remove Metadata from audio files : <a href="https://online-audio-converter.com" target="_blank">online-audio-converter</a>
+                </p>
+
+        <h1 id="useful-links">Useful Links ❤️</h1>
+        <p>
+          1. <a href="https://github.com/neerja-1984/PAM-GSoC-25-Project" target="_blank">PAM-GSoC-25-Project repository</a>
+        </p>
+        <p>
+          2. <a href="https://github.com/neerja-1984/rewind-gsoc25" target="_blank">GSoC'25 Weekly Updates Readme !</a>
+        </p>
+        <p>
+          3. <a href="Books/GSoC Proposal _ Pharo TTS .pdf" target="_blank">My Proposal for GSoC'25 -> PAM : Pharo's TTS model</a>
+        </p>
+        <p>
+          4. <a href="https://github.com/neerja-1984/Learn-With-Me-TTS" target="_blank">My tutorial to learn all about TTS models ( from ancient rule-based system to current deeplearning based models) </a>
+        </p>
+        <p>
+          5. <a href="https://github.com/neerja-1984/Learn-With-Me-Pharo" target="_blank">My tutorial to learn Pharo as a beginner </a>
+        </p>
+                    
+        <h1 id="blogs">Blogs ❤️</h1>
+        <div class="section-tiles">
+
+            <!-- blog 1 -->
+            <div class="blog-tile">
+                <a href="https://medium.com/@nirjadoshi2003/the-hows-of-written-english-to-spoken-english-080d368d774b"
+                    target="_blank" class="blog-link">
+                    <div class="blog-content">
+
+                        <!-- sticker / circular image -->
+                        <div class="blog-image">
+                            <img src="assets/Gifs/Speech.gif" alt="Blog sticker">
+                        </div>
+
+                        <!-- blog title -->
+                        <h4 class="blog-title">The How’s of Written English to Spoken English</h4>
+                        <p class="blog-meta">
+                            <span class="author">✍️ Neerja D</span> ·
+                            <span class="time">9 min read</span> ·
+                            <span class="date">Aug 4, 2025</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- blog 2 -->
+            <div class="blog-tile">
+                <a href="https://medium.com/@nirjadoshi2003/the-hows-of-written-english-to-spoken-english-080d368d774b"
+                    target="_blank" class="blog-link">
+                    <div class="blog-content">
+
+                        <!-- sticker / circular image -->
+                        <div class="blog-image">
+                            <img src="assets/Gifs/system-design.gif" alt="Blog sticker">
+                        </div>
+
+                        <!-- blog title -->
+                        <h4 class="blog-title">The How’s of Written English to Spoken English</h4>
+                        <p class="blog-meta">
+                            <span class="author">✍️ Neerja D</span> ·
+                            <span class="time">9 min read</span> ·
+                            <span class="date">Aug 4, 2025</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- blog 3 -->
+            <div class="blog-tile">
+                <a href="https://medium.com/@nirjadoshi2003/the-hows-of-written-english-to-spoken-english-080d368d774b"
+                    target="_blank" class="blog-link">
+                    <div class="blog-content">
+
+                        <!-- sticker / circular image -->
+                        <div class="blog-image">
+                            <img src="assets/Gifs/Speech.gif" alt="Blog sticker">
+                        </div>
+
+                        <!-- blog title -->
+                        <h4 class="blog-title">The How’s of Written English to Spoken English</h4>
+                        <p class="blog-meta">
+                            <span class="author">✍️ Neerja D</span> ·
+                            <span class="time">9 min read</span> ·
+                            <span class="date">Aug 4, 2025</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+    </section>
+
+    <!-- Waves only, act as divider -->
+    <section class="waves-section">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </section>
+
+    <footer class="footer">
+        <p class="crafted">
+            <em>© Made with</em> ☕,🌻 <em> & love by <a href="https://github.com/neerja-1984" target="_blank">Neerja
+                </a></em>❤️ ·
+            <em> 2025</em>
+        </p>
+        <p class="credits">
+            <span class="music-note">🎶</span>
+            <em>Background vibes thanks to
+                <a href="https://www.youtube.com/@RamaLow" target="_blank">RamaLow</a>
+            </em>
+        </p>
+    </footer>
+    <!-- script -->
+    <script src="script.js"></script>
 </body>
 
 </html>

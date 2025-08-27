@@ -1628,9 +1628,12 @@ W getAllRules.
 - IPA : greek letters
 
 - Links to understand : 
-  - [IPA with Example words](https://gist.github.com/walkoncross/33059e1249a24d7596a7abb8c5cec986#-vowels)
+  - [IPA with Example words](https://gist.github.com/walkoncross/33059e1249a24d7596a7abbc5cec986#-vowels)
 
   - [ARPA to IPA table + python coversion code of ARPABet to IPA](https://github.com/chorusai/arpa2ipa?utm_source=chatgpt.com)
+
+  - dataset of 44 phonemes : 
+    - [Link](https://github.com/moh3n9595/phonemes-dataset)
 
 ### code to get the ARPA format audio samples from SAM
 
@@ -2715,3 +2718,21 @@ refernce :
 - `vscode extension -> Markdown PDF (https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)`
 - `right click readme -> export to pdf`
 - `creates a readme.pdf next to readme.md in folder structure` 😄
+
+## 27th August'25
+
+### counting number of lines on a github repo
+
+- first clone a repo somewher :
+  - `git clone https://github.com/neerja-1984/PAM-GSoC-25-Project.git`
+  - run in gitbash  : `git ls-files | xargs wc -l`
+  - ![alt text](Readme/readme-images-vc/image-250.png)
+  - total lines :  `5053`
+
+### to add in Blog : 
+- numbers : 
+  - <video controls src="Readme/readme-images-vc/20250827-1741-13.4817838.mp4" title="Title"></video>
+  - transcript : ![alt text](Readme/readme-images-vc/image-251.png)
+- text :
+  - <video controls src="Readme/readme-images-vc/20250827-1746-13.8824086.mp4" title="Title"></video>
+  - transcript : ![alt text](Readme/readme-images-vc/image-252.png)
