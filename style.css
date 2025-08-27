@@ -400,6 +400,8 @@ Navbar + Music visulizer
 
 /* Visualizer under navbar */
 #visualizer {
+  position: relative;   /* changed from fixed */
+  margin-top: 1rem;     /* space after Blogs */
   width: 120px;
   height: 70px;  /* smaller */
   margin-top: -30px;  /* move up closer to nav items */
