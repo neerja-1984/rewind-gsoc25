@@ -400,13 +400,12 @@ Navbar + Music visulizer
 
 /* Visualizer under navbar */
 #visualizer {
-  position: relative;   /* changed from fixed */
-  margin-top: -180px;     /* space after Blogs */
+  margin-top: 20px;     /* space after Blogs */
   margin-left: 0;
   width: 120px;
   height: 70px;  /* smaller */
-  margin-top: -30px;  /* move up closer to nav items */
   display: block;
+  background-color: black ;
 }
 
 #toggleMusic {
