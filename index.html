@@ -26,6 +26,7 @@
             <li><a href="#acknowledgements">👉 Acknowledgements</a></li>
             <li><a href="#useful-links">👉 Useful Links !</a></li>
             <li><a href="#blogs">👉 Blogs</a></li>
+            <li><a href="#connect">👉 Connect</a></li>
           </ul>
         <canvas id="visualizer" width="100" height="90"></canvas>
         <audio id="bgMusic" src="assets/music/lofi.mp3" loop></audio>
@@ -109,29 +110,28 @@
         <!-- main text -->
         <h1 id="project-abstract">Project Abstract 😎 </h1>
         <p>
-            PAM (Pharo Automated Mouth) is a rule-based Text-to-Speech (TTS) system developed for the Pharo environment.
-            Unlike modern deep-learning TTS systems that require extensive datasets and computational resources,
-            PAM employs a lightweight rule-based approach inspired by the classic
-            <a href="https://discordier.github.io/sam/" target="_blank">SAM (Software Automatic Mouth)</a> system.
-            The project successfully implements text-to-phoneme conversion using <strong>402 English to Grapheme rules
-                and 47 Grapheme to IPA phoeneme conversion rules.</strong> It integrates with Phausto
-            for audio synthesis, enabling prosodic speech generation with controllable parameters like pitch, amplitude,
-            and duration.
+            PAM (Pharo Automated Mouth) is a rule-based Text-to-Speech (TTS) system developed for the Pharo environment. Unlike modern deep-learning TTS systems that require extensive datasets and computational resources, PAM employs a lightweight rule-based approach inspired by the classic <a href="https://discordier.github.io/sam/" target="_blank">SAM (Software Automatic Mouth)</a> system.
+
+            The system implements text-to-phoneme conversion using <strong>402 English → Grapheme rules</strong> and <strong>47 Grapheme → IPA phoneme rules</strong>, producing accurate IPA phoneme sequences with stress markers.
+            
+            For synthesis, PAM adopts a concatenative sample-based approach: instead of generating audio purely algorithmically, it plays back pre-recorded audio samples of phonemes. These are sequenced and stitched together through a TpSampler-driven DSP pipeline (integrated with <a href="https://github.com/lucretiomsp/phausto" target="_blank">Phausto</a>), enabling intelligible speech output.
+            
+            On top of this, PAM introduces prosody control, allowing each phoneme playback to be modulated by parameters such as pitch (adult/child voice presets), amplitude (stress-based loudness), and duration (temporal stretching). This hybrid design — rule-based phoneme generation + sample-based concatenative synthesis + prosodic control — makes PAM lightweight and customizable while still producing natural-sounding speech.
         </p>
 
         <h2>Core Architecture</h2>
         <p>PAM consists of four main components:</p>
 
-        <p><strong>Reciter Engine</strong>: Class <code>Reciter</code> → Converts English text to graphemes using
+        <p><strong>Reciter Engine</strong>: Class <code><a href="https://github.com/neerja-1984/PAM-GSoC-25-Project/blob/master/src/PAM-Core/Reciter.class.st" target="_blank">Reciter</a></code> → Converts English text to Graphemes [ SAM Phoenemes ] using
             pattern-matching rules. The rules are adapted from SAM.</p>
 
-        <p><strong>IPA Converter</strong>: Class <code>PhonemeToIPAConvertor</code> → Transforms graphemes into
+        <p><strong>IPA Converter</strong>: Class <code><a href="https://github.com/neerja-1984/PAM-GSoC-25-Project/blob/master/src/PAM-Core/PhonemeToIPAConvertor.class.st" target="_blank">PhonemeToIPAConvertor</a></code> → Transforms graphemes into
             International Phonetic Alphabet (IPA) format of phonemes.</p>
 
-        <p><strong>Audio Synthesis</strong>: Class <code>PAMDsp</code> → Leverages Phausto’s DSP capabilities for speech
-            generation.</p>
+        <p><strong>Audio Synthesis</strong>: Class <code><a href="https://github.com/neerja-1984/PAM-GSoC-25-Project/blob/master/src/PAM-Core/PAMDsp.class.st" target="_blank">PAMDsp</a></code> → Leverages Phausto’s DSP capabilities for speech
+            generation using pre-recorded audio samples of phonemes.</p>
 
-        <p><strong>Prosody Generation</strong>: Class <code>Parser</code> → Gives prosody to PAM by tweaking frequency,
+        <p><strong>Prosody Generation</strong>: Class <code><a href="https://github.com/neerja-1984/PAM-GSoC-25-Project/blob/master/src/PAM-Core/Parser.class.st" target="_blank">Parser</a></code> → Gives prosody to PAM by tweaking frequency,
             amplitude, length dynamics, and generating age-like voice variations.</p>
 
 
@@ -285,7 +285,7 @@
 
         <p><strong>Problem:</strong> Our audio files were a mix of both Mono and Stereo.Hence, some audio files couldn't
             be heard properly</p>
-        <p><strong>Solution:</strong>Developed FFmpeg + helper scripts to convert mono audio files to stereo.</p>
+        <p><strong>Solution:</strong> Developed FFmpeg + helper scripts to convert mono audio files to stereo.</p>
         <p><strong>Impact:</strong> Reliable playback for all phonemes, standardized pipeline.</p>
 
         <h2>3. Phoneme File Indexing Bug</h2>
@@ -364,17 +364,15 @@
                     </div>
                     <div class="expanded-content">
                         <div class="content-description">
-                            Initial mentorship meetings with Domenico & Nahuel established project foundation. Deep
-                            research into SAM's 450 phonetic rules, IPA phoneme mapping, and understanding reciter
-                            logic. Created first interactive SAM visualization and set up development environment with
-                            Pharo & Iceberg.
+                            Initial mentorship meetings with Domenico & Nahuel to establish project foundation. Deep
+                            research into SAM's 450 phonetic rules and understanding reciter
+                            logic. Set up development environment with Pharo & Iceberg, created Git repository for project 😊
                         </div>
                         <div class="content-tags">
                             <span class="tag">SAM Research</span>
-                            <span class="tag">IPA Phonemes</span>
+                            <span class="tag">Rules Logic</span>
                             <span class="tag">Mentor Meetings</span>
                             <span class="tag">Project Setup</span>
-                            <span class="tag">Visualization</span>
                         </div>
                     </div>
                 </div>
@@ -392,17 +390,13 @@
                     </div>
                     <div class="expanded-content">
                         <div class="content-description">
-                            Successfully converted SAM constants and character flags to Pharo. Mastered class-side vs
-                            instance-side methods, implemented comprehensive test suites, and established proper OOP
-                            architecture. Created alphabet-to-decimal mapping utilities and learned advanced Pharo
-                            debugging techniques.
+                            Successfully converted SAM constants and character flags to PAM, made succesfull tests suites for it. Understood class-side vs instance-side vs class-instance side variables. Learned advanced Pharo debugging techniques.
                         </div>
                         <div class="content-tags">
-                            <span class="tag">Pharo Mastery</span>
                             <span class="tag">Constants Migration</span>
                             <span class="tag">Test Driven Development</span>
-                            <span class="tag">OOP Architecture</span>
                             <span class="tag">Character Flags</span>
+                            <span class="tag">Pharo Debugging</span>
                         </div>
                     </div>
                 </div>
@@ -420,16 +414,14 @@
                     </div>
                     <div class="expanded-content">
                         <div class="content-description">
-                            Implemented complex rule parsing system with prefix-pattern-suffix matching. Developed
-                            closures-based architecture for rule validation, created comprehensive letter-specific rule
-                            dictionaries, and achieved working textToPhoneme conversion for basic words like "HELLO" and
+                            Extended rules for all alphabets. Developed a OOPS based Design pattern for Letter Rules.
+                            Implemented complex rule parsing system with prefix-pattern-suffix matching.Created comprehensive letter-specific rule dictionaries, and achieved working textToPhoneme conversion for basic words like "HELLO" and
                             "COLLEGE".
                         </div>
                         <div class="content-tags">
                             <span class="tag">Pattern Matching</span>
-                            <span class="tag">Rule Engine</span>
-                            <span class="tag">Closures</span>
-                            <span class="tag">Dictionary Architecture</span>
+                            <span class="tag">Rules Engine</span>
+                            <span class="tag">OOPS Design Pattern</span>
                             <span class="tag">Text Processing</span>
                         </div>
                     </div>
@@ -449,15 +441,12 @@
                     <div class="expanded-content">
                         <div class="content-description">
                             Fixed critical sentence parsing issues and wrong phoneme generation caused by rule ordering
-                            problems. Implemented SpringBoot-style logger system, resolved space handling in
-                            textToPhoneme, and achieved green test status for all alphabet rules with proper pattern
-                            priority matching.
+                            problems. Implemented SpringBoot-style logger system of [CLASS NAME -> METHOD NAME -> LOG MESSAGE ], resolved space handling in textToPhoneme, and achieved green test status for all alphabet rules with proper pattern priority matching.
                         </div>
                         <div class="content-tags">
                             <span class="tag">Bug Resolution</span>
                             <span class="tag">Logger System</span>
                             <span class="tag">Rule Prioritization</span>
-                            <span class="tag">Space Handling</span>
                             <span class="tag">Green Tests</span>
                         </div>
                     </div>
@@ -476,7 +465,7 @@
                     </div>
                     <div class="expanded-content">
                         <div class="content-description">
-                            Breakthrough moment! Successfully integrated TPSampler and DSP for audio playback.
+                            Successfully integrated TPSampler and DSP for audio playback for numbers audio-samples.
                             Implemented number audio samples (0-9), resolved Windows/Mac path separator issues, and
                             created first working audio output. Added pragma annotations and fork-based asynchronous
                             audio processing.
@@ -504,10 +493,7 @@
                     </div>
                     <div class="expanded-content">
                         <div class="content-description">
-                            Developed sophisticated phoneme-to-IPA converter using recursive greedy approach. Created
-                            comprehensive mapping dictionary, implemented compound phoneme splitting logic, and achieved
-                            first successful word pronunciation ("DOG"). Established sorted audio file indexing system
-                            for accurate phoneme playback.
+                            Developed sophisticated phoneme-to-IPA converter using recursive greedy approach[ longest matching IPA phoneme first ]. Created comprehensive mapping dictionary, implemented compound phoneme splitting logic, and achieved first successful word pronunciation ("DOG") .. <em>although veryy robotic</em> . Established sorted audio file indexing system for accurate phoneme playback.
                         </div>
                         <div class="content-tags">
                             <span class="tag">IPA Conversion</span>
@@ -542,7 +528,7 @@
                             <span class="tag">Voice Synthesis</span>
                             <span class="tag">Age-based Voices</span>
                             <span class="tag">Audio Parameters</span>
-                            <span class="tag">Stereo Conversion</span>
+                            <span class="tag">Mono to Stereo Conversion</span>
                         </div>
                     </div>
                 </div>
@@ -602,16 +588,15 @@
                     <div class="expanded-content">
                         <div class="content-description">
                             Completed full text-to-speech pipeline with prosodic control! Final PAMDsp implementation
-                            supports natural speech synthesis with age-based voice characteristics, stress-sensitive
-                            pronunciation, and seamless phoneme playback. Successfully demonstrated complete "Hello
-                            World" to complex sentence synthesis with professional-quality results.
+                            supports speech generation with age-based voice characteristics and stress-sensitive
+                            pronunciation !! 😎
                         </div>
                         <div class="content-tags">
                             <span class="tag">Complete TTS Pipeline</span>
+                            <span class="tag">Concatenative Synthesis based TTS model</span>
                             <span class="tag">Natural Speech</span>
                             <span class="tag">GSoC Success</span>
                             <span class="tag">Production Ready</span>
-                            <span class="tag">Professional Quality</span>
                         </div>
                     </div>
                 </div>
@@ -660,7 +645,7 @@
                 </tr>
                 <tr>
                   <td>Package Load Time</td>
-                  <td>&lt;30 seconds</td>
+                  <td>&lt;1 Minute</td>
                 </tr>
               </tbody>
             </table>
@@ -786,7 +771,27 @@
                     </div>
                 </a>
             </div>
+
+<!-- 👇 Place this section before footer -->
+<section id="connect" class="connect-section">
+    <h2>Let’s Connect</h2>
+    <div class="connect-icons">
+      <a href="https://medium.com/@nirjadoshi2003" target="_blank" aria-label="Medium">
+        <img src="assets/images/medium.png" alt="Medium" />
+      </a>
+      <a href="https://www.linkedin.com/in/neerja-doshi-719377239/" target="_blank" aria-label="LinkedIn">
+        <img src="assets/images/linkedin.png" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/neerja-1984" target="_blank" aria-label="GitHub">
+        <img src="assets/images/github.png" alt="GitHub" />
+      </a>
+    </div>
+  </section>
+  
+              
     </section>
+
+
 
     <!-- Waves only, act as divider -->
     <section class="waves-section">
