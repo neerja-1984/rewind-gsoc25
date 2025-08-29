@@ -350,7 +350,7 @@ Navbar + Music visulizer
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .navbar ul {
@@ -391,7 +391,7 @@ Navbar + Music visulizer
   margin-left: 0;
   width: 120px;
   height: 70px;  /* smaller */
-  background-color: black;
+  /* background-color: black; */
 }
 
 #toggleMusic {
