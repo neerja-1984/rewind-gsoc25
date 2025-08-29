@@ -112,10 +112,13 @@
         <p>
             PAM (Pharo Automated Mouth) is a rule-based Text-to-Speech (TTS) system developed for the Pharo environment. Unlike modern deep-learning TTS systems that require extensive datasets and computational resources, PAM employs a lightweight rule-based approach inspired by the classic <a href="https://discordier.github.io/sam/" target="_blank">SAM (Software Automatic Mouth)</a> system.
 
+            <br><br>
             The system implements text-to-phoneme conversion using <strong>402 English → Grapheme rules</strong> and <strong>47 Grapheme → IPA phoneme rules</strong>, producing accurate IPA phoneme sequences with stress markers.
             
+            <br><br>
             For synthesis, PAM adopts a concatenative sample-based approach: instead of generating audio purely algorithmically, it plays back pre-recorded audio samples of phonemes. These are sequenced and stitched together through a TpSampler-driven DSP pipeline (integrated with <a href="https://github.com/lucretiomsp/phausto" target="_blank">Phausto</a>), enabling intelligible speech output.
             
+            <br><br>
             On top of this, PAM introduces prosody control, allowing each phoneme playback to be modulated by parameters such as pitch (adult/child voice presets), amplitude (stress-based loudness), and duration (temporal stretching). This hybrid design — rule-based phoneme generation + sample-based concatenative synthesis + prosodic control — makes PAM lightweight and customizable while still producing natural-sounding speech.
         </p>
 
