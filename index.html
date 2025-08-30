@@ -28,8 +28,26 @@
             <li><a href="#blogs">👉 Blogs</a></li>
             <li><a href="#connect">👉 Let's Connect</a></li>
           </ul>
-        <canvas id="visualizer" width="100" height="90"></canvas>
-        <audio id="bgMusic" src="assets/music/lofi.mp3" loop></audio>
+
+          <div class="music-controls">
+            <canvas id="visualizer" width="100" height="90"></canvas>
+            <button id="playPauseBtn">
+              <!-- Default icon = Pause -->
+              <svg id="pauseIcon" class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="5" width="4" height="14" fill="#ffffff"/>
+                <rect x="14" y="5" width="4" height="14" fill="#ffffff"/>
+              </svg>
+              <svg id="playIcon" class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg" style="display:none;">
+                <path d="M8 5V19L19 12L8 5Z" fill="#ffffff"/>
+              </svg>
+            </button>
+          </div>
+          
+          <audio id="bgMusic" src="assets/music/lofi.mp3" loop></audio>
+          
+
     </nav>
 
     <!-- Main Content -->

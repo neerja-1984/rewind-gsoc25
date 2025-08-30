@@ -394,6 +394,30 @@ Navbar + Music visulizer
   /* background-color: black; */
 }
 
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#playPauseBtn {
+  background: #00454F;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#playPauseBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
 #toggleMusic {
   border: none;
   background: #E8891D;
@@ -963,5 +987,44 @@ Blog tiles
   .main-section {
     margin-left: 240px;
     padding: 3rem 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: none;      /* remove blocky background */
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;           /* spacing between pills */
+  }
+
+  .navbar li {
+    list-style: none;
+    background: #ffffff;   /* pill look */
+    border: 1px solid #d0d8df;
+    border-radius: 999px;  /* makes it pill shaped */
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: background 0.2s ease;
+  }
+
+  .navbar li:hover {
+    background: #f3f6f8;
+  }
+
+  .navbar li a {
+    color: #00454F;
+    text-decoration: none;
+    display: block;
   }
 }

@@ -1,8 +1,16 @@
-const audio = document.getElementById("bgMusic");     // <audio id="bgMusic">
-const canvas = document.getElementById("visualizer"); // <canvas id="visualizer">
+const audio = document.getElementById("bgMusic");
+const canvas = document.getElementById("visualizer");
 const ctx = canvas.getContext("2d");
 
-// --- Canvas sizing (handles HiDPI) ---
+const playPauseBtn = document.getElementById("playPauseBtn");
+const playIcon = document.getElementById("playIcon");
+const pauseIcon = document.getElementById("pauseIcon");
+
+let audioCtx, analyser, dataArray, bufferLength, sourceNode;
+let started = false;
+let animationId = null;
+
+// --- Resize canvas properly ---
 function resizeCanvas() {
   const dpr = Math.max(1, window.devicePixelRatio || 1);
   const rect = canvas.getBoundingClientRect();
@@ -11,75 +19,34 @@ function resizeCanvas() {
 
   canvas.width = Math.floor(cssW * dpr);
   canvas.height = Math.floor(cssH * dpr);
-
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-// --- Audio / analyser setup ---
-let audioCtx, analyser, dataArray, bufferLength, sourceNode;
-let started = false;
-let animationId = null;
-
-function setupAudioOnce() {
+// --- Setup audio + analyser ---
+function setupAudio() {
   if (started) return;
   started = true;
 
-  // Create audio context - this MUST happen during user gesture on mobile
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   analyser = audioCtx.createAnalyser();
-
-  analyser.fftSize = 64; // 32/64 = chunky bars; 128/256 = smoother
+  analyser.fftSize = 64;
   analyser.smoothingTimeConstant = 0.85;
 
   bufferLength = analyser.frequencyBinCount;
   dataArray = new Uint8Array(bufferLength);
 
-  // Connect audio source → analyser → destination
-  if (!sourceNode) {
-    sourceNode = audioCtx.createMediaElementSource(audio);
-    sourceNode.connect(analyser);
-    analyser.connect(audioCtx.destination);
-  }
+  sourceNode = audioCtx.createMediaElementSource(audio);
+  sourceNode.connect(analyser);
+  analyser.connect(audioCtx.destination);
 
-  // Start the animation loop
-  if (!animationId) {
-    draw();
-  }
+  draw();
 }
 
-async function tryStartPlayback() {
-  if (!audioCtx) return;
-
-  // Resume context if suspended
-  if (audioCtx.state === "suspended") {
-    try { 
-      await audioCtx.resume(); 
-    } catch (e) {
-      console.log("Failed to resume audio context:", e);
-    }
-  }
-
-  // Try to play audio
-  try {
-    await audio.play();
-    console.log("Audio playback started successfully");
-  } catch (e) {
-    console.log("Audio autoplay blocked:", e);
-  }
-}
-
-// --- Render loop (frequency bars with gradient shading) ---
+// --- Draw visualizer ---
 function draw() {
   animationId = requestAnimationFrame(draw);
-  
-  if (!analyser || !dataArray) {
-    // If no audio data, show a simple idle animation
-    drawIdleState();
-    return;
-  }
-
   analyser.getByteFrequencyData(dataArray);
 
   const w = canvas.width / (window.devicePixelRatio || 1);
@@ -91,49 +58,13 @@ function draw() {
   const barWidth = Math.max(1, (w - (bars - 1) * gap) / bars);
 
   let x = 0;
-  let hasAudioData = false;
-  
   for (let i = 0; i < bars; i++) {
     const v = dataArray[i] / 255;
-    if (v > 0.01) hasAudioData = true; // Check if we have actual audio data
-    
-    const barHeight = Math.max(2, v * h * 0.9); // Minimum height for visibility
+    const barHeight = Math.max(2, v * h * 0.9);
 
     const grad = ctx.createLinearGradient(0, h, 0, h - barHeight);
-    grad.addColorStop(0, "#05A3A4"); // bottom (Niagara)
-    grad.addColorStop(1, "#E8891D"); // top (Zest)
-
-    ctx.fillStyle = grad;
-    ctx.fillRect(x, h - barHeight, barWidth, barHeight);
-
-    x += barWidth + gap;
-  }
-  
-  // If no audio data, fall back to idle animation
-  if (!hasAudioData) {
-    drawIdleState();
-  }
-}
-
-// --- Idle state animation for when no audio is playing ---
-function drawIdleState() {
-  const w = canvas.width / (window.devicePixelRatio || 1);
-  const h = canvas.height / (window.devicePixelRatio || 1);
-  
-  const gap = 2;
-  const bars = bufferLength || 32;
-  const barWidth = Math.max(1, (w - (bars - 1) * gap) / bars);
-  const time = Date.now() * 0.003; // Slow animation
-
-  let x = 0;
-  for (let i = 0; i < bars; i++) {
-    // Create a gentle wave animation
-    const wave = (Math.sin(time + i * 0.3) + 1) * 0.5;
-    const barHeight = Math.max(2, wave * h * 0.3); // Subtle height
-
-    const grad = ctx.createLinearGradient(0, h, 0, h - barHeight);
-    grad.addColorStop(0, "#05A3A450"); // Semi-transparent
-    grad.addColorStop(1, "#E8891D50"); // Semi-transparent
+    grad.addColorStop(0, "#05A3A4");
+    grad.addColorStop(1, "#E8891D");
 
     ctx.fillStyle = grad;
     ctx.fillRect(x, h - barHeight, barWidth, barHeight);
@@ -142,83 +73,37 @@ function drawIdleState() {
   }
 }
 
-// --- Enhanced mobile support ---
-async function kickstart(event) {
-  console.log("User interaction detected, starting audio...");
-  
-  try {
-    setupAudioOnce();
-    await tryStartPlayback();
-    
-    // Remove all listeners after successful start
-    removeEventListeners();
-  } catch (e) {
-    console.log("Failed to start audio:", e);
+// --- Play / Pause toggle ---
+playPauseBtn.addEventListener("click", async () => {
+  if (!audioCtx) setupAudio();
+
+  if (audio.paused) {
+    await audioCtx.resume();
+    audio.play();
+    playIcon.style.display = "none";
+    pauseIcon.style.display = "block";
+  } else {
+    audio.pause();
+    playIcon.style.display = "block";
+    pauseIcon.style.display = "none";
   }
-}
-
-function removeEventListeners() {
-  window.removeEventListener("pointerdown", kickstart);
-  window.removeEventListener("keydown", kickstart);
-  window.removeEventListener("touchstart", kickstart);
-  window.removeEventListener("click", kickstart);
-  document.removeEventListener("touchstart", kickstart);
-  document.removeEventListener("click", kickstart);
-}
-
-// --- Add multiple event listeners for better mobile compatibility ---
-window.addEventListener("pointerdown", kickstart, { once: true });
-window.addEventListener("keydown", kickstart, { once: true });
-window.addEventListener("touchstart", kickstart, { once: true, passive: true });
-window.addEventListener("click", kickstart, { once: true });
-
-// Also listen on document for better mobile coverage
-document.addEventListener("touchstart", kickstart, { once: true, passive: true });
-document.addEventListener("click", kickstart, { once: true });
-
-// --- Audio event listeners for better mobile handling ---
-audio.addEventListener("loadeddata", () => {
-  console.log("Audio loaded");
 });
 
-audio.addEventListener("canplay", () => {
-  console.log("Audio can play");
+// --- Restart autoplay after ending once ---
+audio.addEventListener("ended", () => {
+  audio.currentTime = 0;
+  audio.play();
 });
 
-audio.addEventListener("play", () => {
-  console.log("Audio started playing");
-});
-
-audio.addEventListener("pause", () => {
-  console.log("Audio paused");
-});
-
-audio.addEventListener("error", (e) => {
-  console.log("Audio error:", e);
-});
-
-// --- Attempt to start on load (will work on desktop, fail gracefully on mobile) ---
+// Start visualizer idle on load
 window.addEventListener("load", () => {
-  // Start the visualizer even without audio for the idle animation
-  if (!animationId) {
-    draw();
-  }
-  
-  // Try to setup audio (will only work if autoplay is allowed)
-  try {
-    setupAudioOnce();
-    tryStartPlayback();
-  } catch (e) {
-    console.log("Autoplay not allowed, waiting for user gesture");
-  }
+  if (!animationId) draw();
+  setupAudio();
+  audio.play().catch(() => {
+    console.log("Autoplay blocked, waiting for user gesture.");
+  });
 });
 
-// --- Handle visibility changes (mobile browsers often pause contexts) ---
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden && audioCtx && audioCtx.state === "suspended") {
-    audioCtx.resume().catch(e => console.log("Failed to resume on visibility change:", e));
-  }
-});
 
   // timeline----------------------------------------------
   function toggleContent(dotElement) {
