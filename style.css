@@ -415,7 +415,7 @@ Navbar + Music visulizer
 }
 
 
-#playPauseBtn {
+.playPauseBtn {
   background: #00454F;
   border: none;
   border-radius: 50%;
@@ -427,7 +427,7 @@ Navbar + Music visulizer
   cursor: url('assets/images/cursor-tap.png'), pointer;
 }
 
-#playPauseBtn svg {
+.playPauseBtn svg {
   width: 20px;
   height: 20px;
 }
@@ -1056,7 +1056,7 @@ Blog tiles
   .hamburger,
   .mobile-nav {
     display: none;
-  }
+  }  
 }
 
 /* --------------------

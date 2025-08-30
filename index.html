@@ -13,54 +13,87 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="#deliverables">👉 My Deliverables</a></li>
-            <li><a href="#project-abstract">👉 Project Abstract</a></li>
-            <li><a href="#major-accomplishments">👉 Major Accomplishments</a></li>
-            <li><a href="#technical-challenges">👉 Technical Challenges Overcome</a></li>
-            <li><a href="#timeline">👉 Timeline Chart of PAM Development</a></li>
-            <li><a href="#code-quality-testing">👉 Code Quality & Testing</a></li>
-            <li><a href="#future-development">👉 Future Development Opportunities</a></li>
-            <li><a href="#acknowledgements">👉 Acknowledgements</a></li>
-            <li><a href="#useful-links">👉 Useful Links !</a></li>
-            <li><a href="#blogs">👉 Blogs</a></li>
-            <li><a href="#connect">👉 Let's Connect</a></li>
-        </ul>
+    <!-- Navbar (desktop) -->
+<nav class="navbar">
+    <ul>
+      <li><a href="#deliverables">👉 My Deliverables</a></li>
+      <li><a href="#project-abstract">👉 Project Abstract</a></li>
+      <li><a href="#major-accomplishments">👉 Major Accomplishments</a></li>
+      <li><a href="#technical-challenges">👉 Technical Challenges Overcome</a></li>
+      <li><a href="#timeline">👉 Timeline Chart of PAM Development</a></li>
+      <li><a href="#code-quality-testing">👉 Code Quality & Testing</a></li>
+      <li><a href="#future-development">👉 Future Development Opportunities</a></li>
+      <li><a href="#acknowledgements">👉 Acknowledgements</a></li>
+      <li><a href="#useful-links">👉 Useful Links !</a></li>
+      <li><a href="#blogs">👉 Blogs</a></li>
+      <li><a href="#connect">👉 Let's Connect</a></li>
+    </ul>
+  
+    <!-- Desktop music controls -->
+    <div class="music-controls desktop-player">
+      <canvas id="visualizer" width="100" height="90"></canvas>
+      <button class="playPauseBtn">
+        <!-- Pause hidden by default -->
+        <svg id="pauseIcon" class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg" style="display:none;">
+        <rect x="6" y="5" width="4" height="14" fill="#ffffff"/>
+        <rect x="14" y="5" width="4" height="14" fill="#ffffff"/>
+      </svg>
 
-        <div class="music-controls">
-            <canvas id="visualizer" width="100" height="90"></canvas>
-            <button id="playPauseBtn">
-                <!-- Pause hidden by default -->
-                <svg id="pauseIcon" class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg" style="display:none;">
-                  <rect x="6" y="5" width="4" height="14" fill="#ffffff"/>
-                  <rect x="14" y="5" width="4" height="14" fill="#ffffff"/>
-                </svg>
-              
-                <!-- Play visible by default -->
-                <svg id="playIcon" class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5V19L19 12L8 5Z" fill="#ffffff"/>
-                </svg>
-              </button>
-          
-          <audio id="bgMusic" src="assets/music/lofi.mp3" loop></audio>
-        </div>
-
-    </nav>
-
-    <!-- for responsive navbar  -->
-     <!-- Hamburger button (only shows on mobile) -->
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
-        <!-- Mobile nav (we’ll copy links from your main navbar via JS) -->
-        <div class="mobile-nav" id="mobileNav"></div>
+        <!-- Play visible by default -->
+        <svg id="playIcon" class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5V19L19 12L8 5Z" fill="#ffffff"/>
+      </svg>
+    </button>
+    </div>
+  
+    <!-- Shared audio (one audio element only) -->
+    <audio id="bgMusic" src="assets/music/lofi.mp3" loop></audio>
+  </nav>
+  
+  <!-- Hamburger (mobile only) -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#deliverables">👉 My Deliverables</a></li>
+      <li><a href="#project-abstract">👉 Project Abstract</a></li>
+      <li><a href="#major-accomplishments">👉 Major Accomplishments</a></li>
+      <li><a href="#technical-challenges">👉 Technical Challenges Overcome</a></li>
+      <li><a href="#timeline">👉 Timeline Chart of PAM Development</a></li>
+      <li><a href="#code-quality-testing">👉 Code Quality & Testing</a></li>
+      <li><a href="#future-development">👉 Future Development Opportunities</a></li>
+      <li><a href="#acknowledgements">👉 Acknowledgements</a></li>
+      <li><a href="#useful-links">👉 Useful Links !</a></li>
+      <li><a href="#blogs">👉 Blogs</a></li>
+      <li><a href="#connect">👉 Let's Connect</a></li>
+    </ul>
+  
+  <!-- Mobile music controls (with its own canvas) -->
+    <div class="music-controls mobile-player">
+    <canvas class="visualizer" width="100" height="90"></canvas>
+    <button class="playPauseBtn">
+        <!-- Pause hidden by default -->
+        <svg id="pauseIcon" class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg" style="display:none;">
+          <rect x="6" y="5" width="4" height="14" fill="#ffffff"/>
+          <rect x="14" y="5" width="4" height="14" fill="#ffffff"/>
+        </svg>
+      
+        <!-- Play visible by default -->
+        <svg id="playIcon" class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5V19L19 12L8 5Z" fill="#ffffff"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 
     <!-- Main Content -->
     <section class="main-section">
