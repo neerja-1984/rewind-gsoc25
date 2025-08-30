@@ -2738,3 +2738,17 @@ refernce :
   - [▶ Watch demo](Readme/readme-images-vc/20250827-1746-13.8824086.mp4)
   - <video controls src="Readme/readme-images-vc/20250827-1746-13.8824086.mp4" title="Title"></video>
   - transcript : ![alt text](Readme/readme-images-vc/image-252.png)
+
+
+## 30th August'25
+
+### added audio samples zip to the github.io [rewind-gsoc25] page + added as a release to the github repo [PAM-GSoC-25-Project]
+
+- [rewind-gsoc25 repo](assets/audio-samples.zip)
+- [PAM-GSoC-25-Project](https://github.com/neerja-1984/PAM-GSoC-25-Project/releases/tag/v1.0)
+
+### Finallyyyy done with the github.io page ! Lookss fabulous ❤️
+
+- Link : https://neerja-1984.github.io/rewind-gsoc25/
+
+### added readme section in [PAM-GSoC-25-Project]
