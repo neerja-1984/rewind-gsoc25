@@ -179,3 +179,19 @@ function createAmbientSparkle() {
         }
     }, 1000);
 }
+
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+const desktopLinks = document.querySelector('.navbar ul');
+const desktopControls = document.querySelector('.music-controls');
+
+// Wrap them separately
+mobileNav.innerHTML = `
+  <div class="mobile-links">${desktopLinks.outerHTML}</div>
+  <div class="mobile-controls">${desktopControls.outerHTML}</div>
+`;
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('open');
+});
