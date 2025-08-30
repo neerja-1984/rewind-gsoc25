@@ -342,7 +342,7 @@ Navbar + Music visulizer
 ------------------- */
 .navbar {
   position: fixed;
-  height: 65%;  
+  height: 60%;  
   top: 40%;
   left: 40px;
   transform: translateY(-50%);
