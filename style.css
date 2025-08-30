@@ -395,6 +395,7 @@ Navbar + Music visulizer
 }
 
 .music-controls {
+  cursor: url('assets/images/cursor-tap.png'), pointer;
   display: flex;
   align-items: center;
   gap: 10px;
