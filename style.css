@@ -386,6 +386,17 @@ Navbar + Music visulizer
   overflow-x: hidden;
 }
 
+.mobile-note {
+  text-align: center;
+  color: #006373;
+  font-size: 0.9rem;
+  margin: 1.5rem 1rem 0.5rem;
+  padding: 0.8rem;
+  background: rgba(0, 99, 115, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid #E8891D;
+  line-height: 1.4;
+}
 
 /* Visualizer under navbar */
 #visualizer {
@@ -1054,7 +1065,8 @@ Blog tiles
 /* Show navbar normally on desktops */
 @media (min-width: 992px) {
   .hamburger,
-  .mobile-nav {
+  .mobile-nav,
+  .mobile-note {
     display: none;
   }
 }

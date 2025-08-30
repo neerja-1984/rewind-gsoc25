@@ -189,6 +189,7 @@ const desktopControls = document.querySelector('.music-controls');
 mobileNav.innerHTML = `
   <div class="mobile-links">${desktopLinks.outerHTML}</div>
   <div class="mobile-controls">${desktopControls.outerHTML}</div>
+  <p class="mobile-note">🎵 Curious what this is? Open the site in your laptop to see it in action! 🎧</p>
 `;
 
 hamburger.addEventListener('click', () => {
