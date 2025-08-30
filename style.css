@@ -107,8 +107,8 @@ text-align: justify;
 }
 
 .project-info {
-  text-align: left;   /* center text under logos */
-  margin-left: 10rem;
+  text-align: center;   /* center text under logos */
+  margin: 0 auto;
 }
 
 .project-info a {
