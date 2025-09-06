@@ -2767,9 +2767,20 @@ refernce :
 
 #### showed them github.io page + live demo ... they were happyy and satisfied !
 
+#### Nahuel was happy that project has 110 commits !!
+
 #### next year .. improving PAM project
 #### Nahuel pointed out --> remember the first time u were struglging with Pharo .. and see the project u have built from scratch
 
 #### everythignmakes sense when we look back and see everything we have done ❤️
 
 #### really happy day !
+
+### IMPT !!!
+
+### To make push in the github repo [rewind-gsoc25]
+
+- add files from vscode extension
+- in terminal go `cd C:\practicals\code\GSOC Proposal\Github-pages-website\assets`
+- git commit -m "message"
+- git push
