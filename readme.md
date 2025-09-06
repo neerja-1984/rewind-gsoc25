@@ -2752,3 +2752,24 @@ refernce :
 - Link : https://neerja-1984.github.io/rewind-gsoc25/
 
 ### added readme section in [PAM-GSoC-25-Project](https://github.com/neerja-1984/PAM-GSoC-25-Project)
+
+## 6th Sept'25
+
+### final meet ! 😢
+
+#### happy pics ... smiley faces !
+
+- ![alt text](Readme/readme-images-vc/image-254.png)
+- ![alt text](Readme/readme-images-vc/image-255.png)
+- ![alt text](Readme/readme-images-vc/image-256.png)
+
+#### Domenico said --> they misjudged the project timeline --> project size should've been more + this is the max that could have been done in 3 months time 
+
+#### showed them github.io page + live demo ... they were happyy and satisfied !
+
+#### next year .. improving PAM project
+#### Nahuel pointed out --> remember the first time u were struglging with Pharo .. and see the project u have built from scratch
+
+#### everythignmakes sense when we look back and see everything we have done ❤️
+
+#### really happy day !
