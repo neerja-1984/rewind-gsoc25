@@ -2784,3 +2784,14 @@ refernce :
 - in terminal go `cd C:\practicals\code\GSOC Proposal\Github-pages-website\assets`
 - git commit -m "message"
 - git push
+
+## 29th September'25
+
+- added 2nd blog ---> oh gawdd the procrastination :(
+- my favourite links !!! ❤️
+  - [GSOC portfolio link](https://summerofcode.withgoogle.com/programs/2025/projects/7yEBbF4z)
+  - [Rewind Gsoc 25 link](https://neerja-1984.github.io/rewind-gsoc25/)
+
+- both blogs :
+  - [the hows of written english to spoken english](https://medium.com/@nirjadoshi2003/the-hows-of-written-english-to-spoken-english-080d368d774b)
+  - [lets make a lightweight text to speech model because why not](https://medium.com/@nirjadoshi2003/lets-make-a-lightweight-text-to-speech-model-because-why-not-9c1955e30e9e)
